@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  frontend:
+    # image: node:18.2-alpine
+    build: .
+    working_dir: /app
+    user: 1000:1000
+    volumes:
+      - ./lsp:/app
+    stdin_open: true
+    command: yarn dev
+    ports:
+      - 3000:3000
