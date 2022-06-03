@@ -16,7 +16,7 @@ function Footer() {
                 alignItems="center"
             >
                 <Grid item className={classes.marginItem}>
-                    <Link href="https://www.lsst.org/" target="_blank">
+                    {/* <Link href="https://www.lsst.org/" target="_blank">
                         <Image
                             src="/rubin.png"
                             alt="LIneA"
@@ -27,7 +27,7 @@ function Footer() {
                     </Link>
                     <Link href="https://data.lsst.cloud/" target="_blank">
                         <Typography className={classes.rsp}>RSP</Typography>
-                    </Link>
+                    </Link> */}
                 </Grid>
                 <Grid item className={classes.marginItem}>
                     <Typography>

@@ -64,7 +64,7 @@ function Header() {
                         className={classes.container}
                     >
                         <Grid item xs={12} className={classes.titleWrapper}>
-                            <h1 className={classes.title}>Photo-Z Server</h1>
+                            <h1 className={classes.title}>LIneA Science Platform</h1>
                         </Grid>
                     </Grid>
                     <div className={classes.socialWrapper}>
@@ -88,7 +88,7 @@ function Header() {
                         </MuiLink>
                         <MuiLink
                             className={classes.social}
-                            href="https://github.com/linea-it/pz-server"
+                            href="https://github.com/linea-it"
                             target="_blank"
                             color="inherit"
                             rel="noreferrer"

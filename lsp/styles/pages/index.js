@@ -22,13 +22,23 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         padding: '20px 0'
     },
-    titleItem: {
+    titleLink: {
+        textDecoration: 'none'
+    },
+    titleItemWhite: {
         fontFamily: 'Oxanium',
         fontSize: '1.5em',
         paddingTop: '0.5em',
         paddingLeft: '1em',
         color: 'white',
         textShadow: '0.1em 0.1em 0.1em black'
+    },
+    titleItemBlack: {
+        fontFamily: 'Oxanium',
+        fontSize: '1.5em',
+        paddingTop: '0.5em',
+        paddingLeft: '1em',
+        color: '#24292e',
     },
     media: {
         minHeight: 260

@@ -4,9 +4,9 @@ import {
   Card,
   CardActionArea,
   CardMedia,
-  Typography
+  Typography,
+  Link
 } from '@mui/material'
-import Link from '../components/Link'
 import useStyles from '../styles/pages/index'
 
 export default function Home() {
@@ -14,26 +14,29 @@ export default function Home() {
 
   const interfaces = [
     {
-      title: 'Upload',
-      path: '/upload',
-      background: '/interfaces/upload.jpg'
+      title: 'Jupyterhub',
+      href: 'https://jupyter.linea.gov.br',
+      background: '/interfaces/jupyterhub.jpg',
+      titleClass: classes.titleItemBlack
     },
     {
-      title: 'LSST PZ Data Products',
-      path: '/oficial_products',
-      background: '/interfaces/lsst-dp.jpg'
+      title: 'Science Server',
+      href: 'https://scienceserver.linea.gov.br/',
+      background: '/interfaces/science_server.png',
+      titleClass: classes.titleItemWhite
     },
     {
-      title: 'User-generated Data Products',
-      path: '/user_products',
-      background: '/interfaces/user-dp.jpg'
+      title: 'User Query',
+      href: 'https://scienceserver-dev.linea.gov.br/daiquiri/query/',
+      background: '/interfaces/user_query.png',
+      titleClass: classes.titleItemWhite
     }
   ]
 
   return (
     <div className={classes.root}>
       <Head>
-        <title>LSP | Home</title>
+        <title>LIneA Science Platform</title>
       </Head>
       <Grid className={classes.main}>
         <Grid
@@ -52,7 +55,7 @@ export default function Home() {
               lg={3}
               className={classes.gridApplicationLg}
             >
-              <Link href={item.path}>
+              <Link href={item.href} className={classes.titleLink}>
                 <Card>
                   <CardActionArea>
                     <CardMedia
@@ -62,8 +65,9 @@ export default function Home() {
                       title={item.title}
                     >
                       <Typography
-                        gutterBottom
-                        className={classes.titleItem}
+                        // gutterBottom
+                        // className={classes.titleItem}
+                        className={item.titleClass}
                         variant="h4"
                         component="h2"
                       >
