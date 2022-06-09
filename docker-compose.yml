@@ -3,7 +3,7 @@ version: "3.9"
 services:
   frontend:
     # image: node:18.2-alpine
-    build: .
+    build: ./dockerfile-dev
     working_dir: /app
     user: 1000:1000
     volumes:

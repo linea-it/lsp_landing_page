@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: linea/lsp_landing_page:latest
+    stdin_open: true
+    command: yarn start
+    ports:
+      - 80:3000
