@@ -139,6 +139,17 @@ drwxr-xr-x  next # Diretório onde ficam os arquivos gerados de cache gerados pe
 
 Procedimento para atualizar o ambiente de produção ou qualquer outro que utilize imagens builded.
 
-- Editar o arquivo docker-compose.yml e alterar a tag das imagens.
-- Executar o pull das novas imagens com o comando `docker-compose pull`.
-- Restart dos serviços `docker-compose stop && docker-compose up -d`.
+```bash
+git clone https://github.com/linea-it/lsp_landing_page.git lsp
+cp docker-compose-production.yml docker-compose.yml
+cp nginx_production.conf nginx.conf
+```
+
+Caso necessário altere a tag padrão da imagem (latest) e a porta do nginx.
+
+Faça o download da imagem com o comando abaixo e o restart do serviço:
+
+```bash
+docker-compose pull
+docker-compose stop && docker-compose up -d
+```
