@@ -139,13 +139,10 @@ drwxr-xr-x  next # Diretório onde ficam os arquivos gerados de cache gerados pe
 
 Procedimento para atualizar o ambiente de produção ou qualquer outro que utilize imagens builded.
 
-```bash
-git clone https://github.com/linea-it/lsp_landing_page.git lsp
-cp docker-compose-production.yml docker-compose.yml
-cp nginx_production.conf nginx.conf
-```
+Edite o arquivo docker-compose.yml e altere a tag das imagens docker para versão desejada. 
+Caso não saiba a tag verifique no Docker Hub: <https://hub.docker.com/repository/docker/linea/lsp_landing_page>
 
-Caso necessário altere a tag padrão da imagem (latest) e a porta do nginx.
+As vezes é necessário alterar configurações do ngnix neste caso o dev vai especificar o que precisa ser feito. 
 
 Faça o download da imagem com o comando abaixo e o restart do serviço:
 
