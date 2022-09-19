@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from '@mui/material'
+import { Container, Grid, Typography, Link } from '@mui/material'
 import useStyles from '../styles/pages/about'
 export default function About() {
   const classes = useStyles()
@@ -9,13 +9,67 @@ export default function About() {
           <Typography variant="h6">About us</Typography>
           <Typography variant="body1" component="span">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Vitae et leo duis ut diam quam nulla porttitor. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Purus ut faucibus pulvinar elementum integer enim neque. Diam vulputate ut pharetra sit amet aliquam id. Sed arcu non odio euismod lacinia at quis risus. Tortor condimentum lacinia quis vel eros donec. Iaculis nunc sed augue lacus viverra vitae. Nec tincidunt praesent semper feugiat nibh sed pulvinar. Eget velit aliquet sagittis id consectetur. Lectus arcu bibendum at varius vel. Tellus in hac habitasse platea dictumst vestibulum rhoncus est. Egestas maecenas pharetra convallis posuere morbi leo urna. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed. Vel pharetra vel turpis nunc eget. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt.
+              The LIneA Science Platform is a collection of web-based services to offer data access and analysis tools for the astronomical community. It is the central place to access the
+              {' '}
+              <Link
+                href="http://www.lsst.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Legacy Survey of Space and Time
+              </Link>{' '}
+              (LSST) data that is hosted in the
+              {' '}
+              <Link
+                href="https://linea.org.br/o-que-e-linea/centro-de-dados/visao-global/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Brazilian Independent Data Acces Center
+              </Link>{' '}
+              (IDAC) (LSST credentials required), available to the whole LSST community.
             </p>
             <p>
-              Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Tellus rutrum tellus pellentesque eu tincidunt. Elementum facilisis leo vel fringilla. Non tellus orci ac auctor. Cursus turpis massa tincidunt dui ut ornare. Sit amet dictum sit amet. Viverra orci sagittis eu volutpat odio facilisis mauris. Nam at lectus urna duis. Dui nunc mattis enim ut. Egestas dui id ornare arcu odio ut sem. Diam quis enim lobortis scelerisque fermentum dui. Odio tempor orci dapibus ultrices in iaculis. Pellentesque dignissim enim sit amet venenatis urna cursus. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus. Tempor orci eu lobortis elementum. Dictum varius duis at consectetur lorem donec massa sapien. Orci sagittis eu volutpat odio facilisis mauris sit. Vitae sapien pellentesque habitant morbi tristique senectus. Sed nisi lacus sed viverra tellus in hac. Tortor condimentum lacinia quis vel eros.
+              The platform offers storage space, computing power, and help from specialists to support the LSST
+              {' '}
+              <Link
+                href="https://linea.org.br/010-ciencia/projetos/4-lsst/brasil-na-era-do-lsst/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Brazilian Participation Group
+              </Link>{' '}
+              (BPG) with the big data challenges imposed by LSST.
             </p>
             <p>
-              Adipiscing enim eu turpis egestas pretium. Eget mi proin sed libero. Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis. Faucibus turpis in eu mi bibendum neque egestas congue quisque. Lorem mollis aliquam ut porttitor leo. Feugiat sed lectus vestibulum mattis ullamcorper. A pellentesque sit amet porttitor eget dolor morbi non. Sed lectus vestibulum mattis ullamcorper velit sed. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Euismod nisi porta lorem mollis aliquam. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Nullam non nisi est sit. Malesuada nunc vel risus commodo viverra. Risus feugiat in ante metus dictum at. Iaculis at erat pellentesque adipiscing commodo elit at imperdiet dui. Molestie ac feugiat sed lectus vestibulum mattis.
+              For the general public, it provides analysis tools and access to public data from previous astronomical surveys such as the
+              {' '}
+              <Link
+                href="http://www.darkenergysurvey.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Dark Energy Survey
+              </Link>{' '}
+              (DES) and the
+              {' '}
+              <Link
+                href="http://www.sdss.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sloan Sky Digital Survey
+              </Link>{' '}
+              (SDSS) (institutional or Google account required). It will also provide access to LSST public data releases when they become available in the future.
+            </p>
+            <p>
+              <strong>Jupyterhub</strong> - a multi-user interactive development tool based on iPython Notebooks that allows users to combine interactive code, output results, structured text, and multimedia resources in the same document.
+            </p>
+            <p>
+              <strong>Science Server</strong> - a set of tools to explore, visualize, and interact with coadded images from photometric surveys. The current version contains images from the two public data releases of DES (DR1 and DR2).
+            </p>
+            <p>
+              <strong>User Query</strong> - a service to provide access to the catalog database for users to explore tabular data and create user-generated samples. The current version contains catalogs from the two public data releases of DES (DR1 and DR2).
             </p>
           </Typography>
         </Grid>

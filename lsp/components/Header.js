@@ -65,6 +65,15 @@ function Header() {
                     >
                         <Grid item xs={12} className={classes.titleWrapper}>
                             <h1 className={classes.title}>LIneA Science Platform</h1>
+                            Welcome to the LIneA Science Platform, a collection of web-based services to offer data access and analysis tools for the astronomical community. Click
+                            {' '}
+                            <MuiLink
+                                href="/about"
+                                color="inherit"
+                            >
+                                here
+                            </MuiLink>{' '}
+                            for more details.
                         </Grid>
                     </Grid>
                     <div className={classes.socialWrapper}>
