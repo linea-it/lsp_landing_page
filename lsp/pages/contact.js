@@ -23,11 +23,11 @@ export default function Contact() {
             <p>
               Technical support:{' '}
               <Link
-                href="mailto:helpdesk@linea.gov.br"
+                href="mailto:helpdesk@linea.org.br"
                 target="_blank"
                 rel="noreferrer"
               >
-                helpdesk@linea.gov.br
+                helpdesk@linea.org.br
               </Link>
             </p>
           </Typography>
