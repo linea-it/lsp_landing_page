@@ -15,19 +15,19 @@ export default function Home() {
   const interfaces = [
     {
       title: 'Jupyterhub',
-      href: 'https://jupyter.linea.gov.br',
+      href: 'https://jupyter.linea.org.br',
       background: '/interfaces/jupyterhub.jpg',
       titleClass: classes.titleItemBlack
     },
     {
       title: 'Science Server',
-      href: 'https://scienceserver.linea.gov.br/',
+      href: 'https://scienceserver.linea.org.br/',
       background: '/interfaces/science_server.png',
       titleClass: classes.titleItemWhite
     },
     {
       title: 'User Query',
-      href: 'https://scienceserver-dev.linea.gov.br/daiquiri/query/',
+      href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
       background: '/interfaces/user_query.png',
       titleClass: classes.titleItemWhite
     }
