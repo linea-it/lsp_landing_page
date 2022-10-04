@@ -82,8 +82,6 @@ export default function Home({ interfaces }) {
 
 export const getServerSideProps = async ctx => {
 
-  const host = ctx.req.headers.host || null;
-
   const interfaces = [
     {
       title: 'Jupyterhub',
@@ -99,7 +97,7 @@ export const getServerSideProps = async ctx => {
       title: 'User Query',
       href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
       background: '/interfaces/user_query.png',
-      disabled: host === 'https://lsp.linea.org.br' ? false : true
+      disabled: ctx.req.headers.host === 'https://lsp.linea.org.br/' ? true : false
     }
   ]
 
