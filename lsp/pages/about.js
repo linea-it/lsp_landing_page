@@ -6,7 +6,7 @@ export default function About() {
     <Container className={classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={12}>
-          <Typography variant="h6">About us</Typography>
+          <Typography variant="h6">About</Typography>
           <Typography variant="body1" component="span">
             <p>
               The LIneA Science Platform is a collection of web-based services to offer data access and analysis tools for the astronomical community. It is the central place to access the
@@ -30,14 +30,14 @@ export default function About() {
               (IDAC) (LSST credentials required), available to the whole LSST community.
             </p>
             <p>
-              The platform offers storage space, computing power, and help from specialists to support the LSST
+              The platform offers storage space, computing power, and help from specialists to support the
               {' '}
               <Link
                 href="https://linea.org.br/010-ciencia/projetos/4-lsst/brasil-na-era-do-lsst/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Brazilian Participation Group
+                LSST Brazilian Participation Group
               </Link>{' '}
               (BPG) with the big data challenges imposed by LSST.
             </p>
@@ -70,6 +70,33 @@ export default function About() {
             </p>
             <p>
               <strong>User Query</strong> - a service to provide access to the catalog database for users to explore tabular data and create user-generated samples. The current version contains catalogs from the two public data releases of DES (DR1 and DR2).
+            </p>
+          </Typography>
+          <Typography variant="h6">About us</Typography>
+          <Typography variant="body1" component="span">
+            <p>
+              LIneA is a multi-user laboratory operated by a non-profit organization with financial support from the Brazilian Ministry of Science, Technology, and Innovation. Our mission is to support the Brazilian astronomical community with computing infrastructure and big data analysis expertise to provide technical conditions for participation in large astronomical surveys, such as SDSS, DES, and LSST.
+            </p>
+            {' '}
+            <p>
+              If you are a Portuguese speaker, please find more about LIneA on our
+              {' '}
+              <Link
+                href="https://youtu.be/jC-k85tfd0Y"
+                target="_blank"
+                rel="noreferrer"
+              >
+                YouTube Channel
+              </Link>{' '}
+              and
+              {' '}
+              <Link
+                href="http://linea.org.br"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Website
+              </Link>{' '}.
             </p>
           </Typography>
         </Grid>
