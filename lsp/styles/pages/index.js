@@ -49,7 +49,23 @@ const useStyles = makeStyles(theme => ({
             width: '20%',
             maxWidth: '20%'
         }
+    },
+    applicationDisabled: {
+        opacity: '0.15',
+        pointerEvents: 'none'
+    },
+    applicationEnabled: {
+        opacity: '1',
+        pointerEvents: 'initial'
+    },
+    comingSoon: {
+        fontFamily: 'Oxanium',
+        fontSize: '1.5em',
+        paddingTop: '0.5em',
+        paddingLeft: '1em',
+        color: '#24292e',
     }
 }))
 
 export default useStyles
+

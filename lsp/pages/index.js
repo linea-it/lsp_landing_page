@@ -3,35 +3,18 @@ import {
   Grid,
   Card,
   CardActionArea,
+  CardContent,
   CardMedia,
   Typography,
   Link
 } from '@mui/material'
+import Alert from '@mui/material/Alert';
 import useStyles from '../styles/pages/index'
+import { useRouter } from 'next/router'
 
-export default function Home() {
+export default function Home({ interfaces }) {
   const classes = useStyles()
-
-  const interfaces = [
-    {
-      title: 'Jupyterhub',
-      href: 'https://jupyter.linea.org.br',
-      background: '/interfaces/jupyterhub.jpg',
-      titleClass: classes.titleItemBlack
-    },
-    {
-      title: 'Science Server',
-      href: 'https://scienceserver.linea.org.br/',
-      background: '/interfaces/science_server.png',
-      titleClass: classes.titleItemWhite
-    },
-    {
-      title: 'User Query',
-      href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
-      background: '/interfaces/user_query.png',
-      titleClass: classes.titleItemWhite
-    }
-  ]
+  const router = useRouter();
 
   return (
     <div className={classes.root}>
@@ -55,32 +38,73 @@ export default function Home() {
               lg={3}
               className={classes.gridApplicationLg}
             >
-              <Link href={item.href} className={classes.titleLink}>
-                <Card>
-                  <CardActionArea>
-                    <CardMedia
-                      alt={item.title}
-                      className={classes.media}
-                      image={item.background}
-                      title={item.title}
-                    >
-                      <Typography
-                        // gutterBottom
-                        // className={classes.titleItem}
-                        className={item.titleClass}
-                        variant="h4"
-                        component="h2"
+              <Card>
+                <div className={item.disabled ? classes.applicationDisabled : classes.applicationEnabled}>
+                  <Link href={item.href} className={classes.titleLink}>
+                    <CardActionArea>
+                      <CardMedia
+                        alt={item.title}
+                        className={classes.media}
+                        image={item.background}
+                        title={item.title}
                       >
-                        {item.title}
-                      </Typography>
-                    </CardMedia>
-                  </CardActionArea>
-                </Card>
-              </Link>
+                        <Typography
+                          className={classes.titleItemWhite}
+                          variant="h4"
+                          component="h2"
+                        >
+                          {item.title}
+                        </Typography>
+                        <Typography className={classes.comingSoon}
+                          variant="h4"
+                          component="h2">
+                        </Typography>
+                      </CardMedia>
+                    </CardActionArea>
+                  </Link>
+                </div>
+                {item.disabled && (
+                  <CardContent className={classes.applicationEnabled}>
+                    <Alert variant="outlined" severity="info">
+                      {`${item.title} - Coming soon.`}
+                    </Alert>
+                  </CardContent>
+                )}
+              </Card>
+
             </Grid>
           ))}
         </Grid>
       </Grid>
-    </div>
+    </div >
   )
+}
+
+export const getServerSideProps = async ctx => {
+
+  const host = ctx.req.headers.host || null;
+
+  const interfaces = [
+    {
+      title: 'Jupyterhub',
+      href: 'https://jupyter.linea.org.br',
+      background: '/interfaces/jupyterhub.jpg',
+    },
+    {
+      title: 'Science Server',
+      href: 'https://scienceserver.linea.org.br/',
+      background: '/interfaces/science_server.png',
+    },
+    {
+      title: 'User Query',
+      href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
+      background: '/interfaces/user_query.png',
+      disabled: host === 'https://lsp.linea.org.br' ? false : true
+    }
+  ]
+
+
+  return {
+    props: { interfaces: interfaces }
+  }
 }
