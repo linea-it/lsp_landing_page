@@ -63,13 +63,13 @@ export default function Home({ interfaces }) {
                     </CardActionArea>
                   </Link>
                 </div>
-                {item.disabled && (
+                {/* {item.disabled && (
                   <CardContent className={classes.applicationEnabled}>
                     <Alert variant="outlined" severity="info">
                       {`${item.title} - Coming soon.`}
                     </Alert>
                   </CardContent>
-                )}
+                )} */}
               </Card>
 
             </Grid>
@@ -84,25 +84,109 @@ export const getServerSideProps = async ctx => {
 
   const host = ctx.req.headers.host || null;
 
-  const interfaces = [
+  let interfaces = [
     {
+      name: 'jupyterhub',
       title: 'Jupyterhub',
       href: 'https://jupyter.linea.org.br',
       background: '/interfaces/jupyterhub.jpg',
+      disabled: false
     },
     {
+      name: 'science_server',
       title: 'Science Server',
       href: 'https://scienceserver.linea.org.br/',
       background: '/interfaces/science_server.png',
+      disabled: false
     },
     {
+      name: 'user_query',
       title: 'User Query',
-      href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
+      href: 'https://scienceserver.linea.org.br/daiquiri/query/',
       background: '/interfaces/user_query.png',
-      disabled: host === 'https://lsp.linea.org.br' ? true : false
-    }
+      disabled: false
+    },
+    {
+      name: 'cross_matching',
+      title: 'Cross-matching',
+      href: host,
+      background: '/interfaces/user_query.png',
+      disabled: true
+    },
+    {
+      name: 'datasets',
+      title: 'Datasets',
+      href: host,
+      background: '/interfaces/user_query.png',
+      disabled: true
+    },
   ]
 
+  if (host === 'https://lsp.linea.org.br') {
+    interfaces = [
+      {
+        name: 'jupyterhub',
+        title: 'Jupyterhub',
+        href: 'https://jupyter.linea.org.br',
+        background: '/interfaces/jupyterhub.jpg',
+        disabled: false
+      },
+      {
+        name: 'science_server',
+        title: 'Science Server',
+        href: 'https://scienceserver.linea.org.br/',
+        background: '/interfaces/science_server.png',
+        disabled: false
+      },
+      {
+        name: 'user_query',
+        title: 'User Query',
+        href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
+        background: '/interfaces/user_query.png',
+        disabled: true
+      }
+    ]
+  }
+
+  if (host === 'https://lsp-dev.linea.org.br') {
+    interfaces = [
+      {
+        name: 'jupyterhub',
+        title: 'Jupyterhub',
+        href: 'https://jupyter.linea.org.br',
+        background: '/interfaces/jupyterhub.jpg',
+        disabled: false
+      },
+      {
+        name: 'science_server',
+        title: 'Science Server',
+        href: 'https://scienceserver-dev.linea.org.br/',
+        background: '/interfaces/science_server.png',
+        disabled: false
+      },
+      {
+        name: 'user_query',
+        title: 'User Query',
+        href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
+        background: '/interfaces/user_query.png',
+        disabled: false
+      },
+      {
+        name: 'cross_matching',
+        title: 'Cross-matching',
+        href: 'https://lsp-dev.linea.org.br',
+        background: '/interfaces/user_query.png',
+        disabled: true
+      },
+      {
+        name: 'datasets',
+        title: 'Datasets',
+        href: 'https://lsp-dev.linea.org.br',
+        background: '/interfaces/user_query.png',
+        disabled: true
+      },
+    ]
+  }
 
   return {
     props: { interfaces: interfaces }
