@@ -95,7 +95,7 @@ export const getServerSideProps = async ctx => {
         {
           name: 'jupyterhub',
           title: 'Jupyterhub',
-          href: 'https://jupyter.linea.org.br',
+          href: 'https://jupyter-dev.linea.org.br',
           background: '/interfaces/jupyterhub.jpg',
           disabled: false
         },
