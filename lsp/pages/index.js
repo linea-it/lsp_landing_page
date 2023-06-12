@@ -83,109 +83,116 @@ export default function Home({ interfaces }) {
 export const getServerSideProps = async ctx => {
 
   const host = ctx.req.headers.host || null;
+  // console.log("Host: ", host)
+  const enviroment = process.env.NEXT_PUBLIC_ENVIROMENT
+  console.log('Enviroment: %o', enviroment)
 
-  let interfaces = [
-    {
-      name: 'jupyterhub',
-      title: 'Jupyterhub',
-      href: 'https://jupyter.linea.org.br',
-      background: '/interfaces/jupyterhub.jpg',
-      disabled: false
-    },
-    {
-      name: 'science_server',
-      title: 'Science Server',
-      href: 'https://scienceserver.linea.org.br/',
-      background: '/interfaces/science_server.png',
-      disabled: false
-    },
-    {
-      name: 'user_query',
-      title: 'User Query',
-      href: 'https://scienceserver.linea.org.br/daiquiri/query/',
-      background: '/interfaces/user_query.png',
-      disabled: false
-    },
-    {
-      name: 'cross_matching',
-      title: 'Cross-matching',
-      href: host,
-      background: '/interfaces/user_query.png',
-      disabled: true
-    },
-    {
-      name: 'datasets',
-      title: 'Datasets',
-      href: host,
-      background: '/interfaces/user_query.png',
-      disabled: true
-    },
-  ]
+  let interfaces = []
 
-  if (host === 'https://lsp.linea.org.br') {
-    interfaces = [
-      {
-        name: 'jupyterhub',
-        title: 'Jupyterhub',
-        href: 'https://jupyter.linea.org.br',
-        background: '/interfaces/jupyterhub.jpg',
-        disabled: false
-      },
-      {
-        name: 'science_server',
-        title: 'Science Server',
-        href: 'https://scienceserver.linea.org.br/',
-        background: '/interfaces/science_server.png',
-        disabled: false
-      },
-      {
-        name: 'user_query',
-        title: 'User Query',
-        href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
-        background: '/interfaces/user_query.png',
-        disabled: true
-      }
-    ]
-  }
-
-  if (host === 'https://lsp-dev.linea.org.br') {
-    interfaces = [
-      {
-        name: 'jupyterhub',
-        title: 'Jupyterhub',
-        href: 'https://jupyter.linea.org.br',
-        background: '/interfaces/jupyterhub.jpg',
-        disabled: false
-      },
-      {
-        name: 'science_server',
-        title: 'Science Server',
-        href: 'https://scienceserver-dev.linea.org.br/',
-        background: '/interfaces/science_server.png',
-        disabled: false
-      },
-      {
-        name: 'user_query',
-        title: 'User Query',
-        href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
-        background: '/interfaces/user_query.png',
-        disabled: false
-      },
-      {
-        name: 'cross_matching',
-        title: 'Cross-matching',
-        href: 'https://lsp-dev.linea.org.br',
-        background: '/interfaces/user_query.png',
-        disabled: true
-      },
-      {
-        name: 'datasets',
-        title: 'Datasets',
-        href: 'https://lsp-dev.linea.org.br',
-        background: '/interfaces/user_query.png',
-        disabled: true
-      },
-    ]
+  switch (enviroment) {
+    case 'lsp-dev':
+      interfaces = [
+        {
+          name: 'jupyterhub',
+          title: 'Jupyterhub',
+          href: 'https://jupyter.linea.org.br',
+          background: '/interfaces/jupyterhub.jpg',
+          disabled: false
+        },
+        {
+          name: 'science_server',
+          title: 'Science Server',
+          href: 'https://scienceserver-dev.linea.org.br/',
+          background: '/interfaces/science_server.png',
+          disabled: false
+        },
+        {
+          name: 'user_query',
+          title: 'User Query',
+          href: 'https://scienceserver-dev.linea.org.br/daiquiri/query/',
+          background: '/interfaces/user_query.png',
+          disabled: false
+        },
+        {
+          name: 'cross_matching',
+          title: 'Cross-matching',
+          href: host,
+          background: '/interfaces/user_query.png',
+          disabled: true
+        },
+        {
+          name: 'datasets',
+          title: 'Datasets',
+          href: host,
+          background: '/interfaces/user_query.png',
+          disabled: true
+        },
+      ]
+      break;
+    case 'lsp-production':
+      interfaces = [
+        {
+          name: 'jupyterhub',
+          title: 'Jupyterhub',
+          href: 'https://jupyter.linea.org.br',
+          background: '/interfaces/jupyterhub.jpg',
+          disabled: false
+        },
+        {
+          name: 'science_server',
+          title: 'Science Server',
+          href: 'https://scienceserver.linea.org.br/',
+          background: '/interfaces/science_server.png',
+          disabled: false
+        },
+        {
+          name: 'user_query',
+          title: 'User Query',
+          href: 'https://scienceserver.linea.org.br/daiquiri/query/',
+          background: '/interfaces/user_query.png',
+          disabled: true
+        }
+      ]
+      break;
+    default:
+      interfaces = [
+        {
+          name: 'jupyterhub',
+          title: 'Jupyterhub',
+          href: 'https://jupyter.linea.org.br',
+          background: '/interfaces/jupyterhub.jpg',
+          disabled: false
+        },
+        {
+          name: 'science_server',
+          title: 'Science Server',
+          href: 'https://scienceserver.linea.org.br/',
+          background: '/interfaces/science_server.png',
+          disabled: false
+        },
+        {
+          name: 'user_query',
+          title: 'User Query',
+          href: 'https://scienceserver.linea.org.br/daiquiri/query/',
+          background: '/interfaces/user_query.png',
+          disabled: false
+        },
+        {
+          name: 'cross_matching',
+          title: 'Cross-matching',
+          href: host,
+          background: '/interfaces/user_query.png',
+          disabled: true
+        },
+        {
+          name: 'datasets',
+          title: 'Datasets',
+          href: host,
+          background: '/interfaces/user_query.png',
+          disabled: true
+        },
+      ]
+      break;
   }
 
   return {

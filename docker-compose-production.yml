@@ -4,6 +4,11 @@ services:
   frontend:
     image: linea/lsp_landing_page:latest
     command: yarn start
+    environment:
+        # Use lsp-dev for testing enviroment lsp-dev.linea.org.br
+        # Use lsp-production for production enviroment lsp.linea.org.br
+        # Em branco para ambiente de desenvolvimento (localhost)
+      - NEXT_PUBLIC_ENVIROMENT=lsp-production
 
   nginx:
     image: nginx:1.21.6-alpine
