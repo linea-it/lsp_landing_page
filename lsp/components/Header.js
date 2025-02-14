@@ -5,11 +5,12 @@ import {
     AppBar,
     Toolbar,
     List,
+    Typography,
     ListItem,
+    Box,
     Grid,
     Link as MuiLink
 } from '@mui/material'
-import { YouTube, Twitter, GitHub } from '@mui/icons-material'
 import Link from './Link'
 import useStyles from '../styles/components/Header'
 
@@ -33,14 +34,20 @@ function Header() {
         {
             description: 'Contact',
             href: '/contact'
+        },
+        {
+            description: 'IDAC',
+            href: '/idac'
         }
     ]
 
     return (
-        <div>
+        <Box>
             <AppBar position="static" className={classes.appbar}>
                 <Toolbar className={classes.toolbar}>
-                    <Image src="/logo.png" alt="LIneA" width={64} height={64} />
+                    <Link href="/" className={classes.logoLink}>
+                        <Image src="/linea-symbol.svg" alt="LIneA" width={52} height={40} />
+                    </Link>
                     <List className={classes.menuList}>
                         {menus.map(menu => (
                             <ListItem key={menu.href} className={classes.menuListItem}>
@@ -50,7 +57,7 @@ function Header() {
                             </ListItem>
                         ))}
                     </List>
-                    <div className={classes.separator} />
+                    <Box className={classes.separator} />
                 </Toolbar>
             </AppBar>
 
@@ -64,50 +71,13 @@ function Header() {
                         className={classes.container}
                     >
                         <Grid item xs={12} className={classes.titleWrapper}>
-                            <h1 className={classes.title}>LIneA Science Platform</h1>
-                            Welcome to the LIneA Science Platform, a collection of web-based services to offer data access and analysis tools for the astronomical community. Click
-                            {' '}
-                            <MuiLink
-                                href="/about"
-                                color="inherit"
-                            >
-                                here
-                            </MuiLink>{' '}
-                            for more details.
+                            <Typography className={classes.title}>LIneA Science Platform</Typography>
+                            Welcome to the LIneA Science Platform, a collection of web-based services to offer data access and analysis tools for the astronomical community.
                         </Grid>
                     </Grid>
-                    <div className={classes.socialWrapper}>
-                        <MuiLink
-                            className={classes.social}
-                            href="https://www.youtube.com/user/lineamcti"
-                            target="_blank"
-                            color="inherit"
-                            rel="noreferrer"
-                        >
-                            <YouTube />
-                        </MuiLink>
-                        <MuiLink
-                            className={classes.social}
-                            href="https://twitter.com/LIneA_mcti"
-                            target="_blank"
-                            color="inherit"
-                            rel="noreferrer"
-                        >
-                            <Twitter />
-                        </MuiLink>
-                        <MuiLink
-                            className={classes.social}
-                            href="https://github.com/linea-it"
-                            target="_blank"
-                            color="inherit"
-                            rel="noreferrer"
-                        >
-                            <GitHub />
-                        </MuiLink>
-                    </div>
                 </Grid>
             )}
-        </div>
+        </Box>
     )
 }
 

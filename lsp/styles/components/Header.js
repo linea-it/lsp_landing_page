@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
         marginRight: 10
     },
     appbar: {
-        background: theme.palette.primary.dark
+        background: '-webkit-linear-gradient(120deg, #0989cb, #31297f)',
     },
     separator: {
         flexGrow: 1
@@ -46,8 +46,8 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        background: 'url(/header.jpg)',
-        backgroundRepeat: 'no-repeat',
+        background: 'url(/starts.gif)',
+        // backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover'
         // height: '30%'
         // marginBottom: theme.spacing(4)
@@ -88,16 +88,6 @@ const useStyles = makeStyles(theme => ({
         },
         textShadow: 'black 0.1em 0.1em 0.2em'
     },
-    socialWrapper: {
-        color: '#fff',
-        position: 'absolute',
-        right: 0,
-        bottom: 0,
-        zIndex: 2
-    },
-    social: {
-        margin: '0 12px'
-    }
 }))
 
 export default useStyles
