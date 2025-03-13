@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
         marginRight: 10
     },
     appbar: {
-        background: '-webkit-linear-gradient(120deg, #0989cb, #31297f)',
+        background: '-webkit-linear-gradient(120deg,  #31297f, #0989cb)',
     },
     separator: {
         flexGrow: 1
