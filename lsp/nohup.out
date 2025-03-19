@@ -1,0 +1,155 @@
+yarn run v1.22.22
+$ next dev --turbopack
+   ▲ Next.js 15.2.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.32.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 794ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1214ms
+ GET / 200 in 76ms
+ ✓ Compiled /favicon.ico in 325ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 373ms
+ GET / 200 in 54ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 25ms
+ GET / 200 in 49ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 22ms
+ GET / 200 in 49ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 25ms
+ GET / 200 in 47ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 22ms
+ GET / 200 in 55ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 23ms
+yarn run v1.22.22
+$ next dev --turbopack
+   ▲ Next.js 15.2.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.32.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 765ms
+ ○ Compiling /lsp ...
+ ✓ Compiled /lsp in 1246ms
+ GET /lsp 200 in 1499ms
+ GET /lsp 200 in 88ms
+ GET /lsp 200 in 31ms
+ GET /lsp 200 in 75ms
+ ✓ Compiled /idac in 378ms
+ GET /idac 200 in 423ms
+ ✓ Compiled / in 474ms
+ GET / 200 in 518ms
+ ✓ Compiled / in 22ms
+ GET / 200 in 103ms
+ GET / 200 in 146ms
+ GET /idac 200 in 136ms
+ ✓ Compiled /favicon.ico in 363ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 416ms
+ ✓ Compiled / in 20ms
+ GET /idac 200 in 43ms
+ GET / 200 in 122ms
+ GET /lsp 200 in 41ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 39ms
+ GET /lsp 200 in 36ms
+ GET / 307 in 67ms
+ GET /lsp 200 in 52ms
+ ✓ Compiled /_not-found/page in 386ms
+ GET /l 404 in 430ms
+ GET / 307 in 52ms
+ GET /lsp 200 in 47ms
+ GET /lsp 200 in 35ms
+ GET /idac 200 in 44ms
+ ✓ Compiled in 3ms
+ ⨯ ./src/app/lsp/layout.js:2:1
+Module not found: Can't resolve './globals.css'
+[0m [90m 1 |[39m [36mimport[39m { [33mGeist[39m[33m,[39m [33mGeist_Mono[39m } [36mfrom[39m [32m"next/font/google"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 3 |[39m[0m
+[0m [90m 4 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+[0m [90m 5 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ✓ Compiled /idac in 66ms
+ ⨯ ./src/app/lsp/layout.js:2:1
+Module not found: Can't resolve './globals.css'
+[0m [90m 1 |[39m [36mimport[39m { [33mGeist[39m[33m,[39m [33mGeist_Mono[39m } [36mfrom[39m [32m"next/font/google"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 3 |[39m[0m
+[0m [90m 4 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+[0m [90m 5 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/lsp/layout.js:2:1
+Module not found: Can't resolve './globals.css'
+[0m [90m 1 |[39m [36mimport[39m { [33mGeist[39m[33m,[39m [33mGeist_Mono[39m } [36mfrom[39m [32m"next/font/google"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 3 |[39m[0m
+[0m [90m 4 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+[0m [90m 5 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ⨯ ./src/app/lsp/layout.js:2:1
+Module not found: Can't resolve './globals.css'
+[0m [90m 1 |[39m [36mimport[39m { [33mGeist[39m[33m,[39m [33mGeist_Mono[39m } [36mfrom[39m [32m"next/font/google"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m [32m"./globals.css"[39m[33m;[39m[0m
+[0m [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
+[0m [90m 3 |[39m[0m
+[0m [90m 4 |[39m [36mconst[39m geistSans [33m=[39m [33mGeist[39m({[0m
+[0m [90m 5 |[39m   variable[33m:[39m [32m"--font-geist-sans"[39m[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1023ms
+ GET /idac 500 in 1307ms
+ GET /idac 500 in 1447ms
+ GET /lsp 500 in 1460ms
+ GET /lsp 500 in 1303ms
+ GET /favicon.ico 500 in 26ms
+ GET /favicon.ico 500 in 24ms
+ ✓ Compiled /lsp in 18ms
+ GET /lsp 200 in 162ms
+ GET /idac 200 in 161ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 29ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 28ms
+ GET /favicon.ico 200 in 29ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 22ms
+ ✓ Compiled /lsp in 25ms
+ GET /idac 200 in 55ms
+ GET /lsp 200 in 142ms
+ GET /idac 200 in 144ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 28ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 26ms
+ GET /favicon.ico 200 in 29ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 24ms
+ GET /lsp 200 in 67ms
+ GET /lsp 200 in 37ms
+ GET /lsp 200 in 35ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 32ms
+ ✓ Compiled in 261ms
+ GET /lsp 200 in 35ms
+ GET /lsp 200 in 33ms
+ ✓ Compiled in 117ms
+ GET /lsp 200 in 35ms
+ GET /lsp 200 in 34ms
+ ✓ Compiled in 3ms
+ ✓ Compiled /idac in 95ms
+ GET /idac 200 in 203ms

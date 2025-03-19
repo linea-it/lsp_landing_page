@@ -1,0 +1,19 @@
+services:
+  frontend:
+    image: node:22.11.0-bookworm-slim
+    working_dir: /app
+    user: 1000:1000
+    volumes:
+      - ./lsp:/app
+    # environment:
+    #   # Use lsp-dev for testing enviroment lsp-dev.linea.org.br
+    #   # Use lsp-production for production enviroment lsp.linea.org.br
+    #   # Em branco para ambiente de desenvolvimento (localhost)
+    #   - NEXT_PUBLIC_ENVIROMENT=lsp-dev
+    # volumes:
+    #   - ./lsp:/app
+    # stdin_open: true
+    command: yarn dev
+    # command: sleep infinity
+    ports:
+      - 3000:3000
