@@ -2,6 +2,7 @@ import "../globals.css";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import LspAppBar from "@/components/LspAppBar";
 import theme from '../../theme';
 
@@ -21,9 +22,11 @@ const roboto = Roboto({
 export default function LspRootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={roboto.variable}>
+      {/* <body className={roboto.variable}> */}
+      <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
+            <CssBaseline />
             <LspAppBar />
             {children}
           </ThemeProvider>

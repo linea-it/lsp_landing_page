@@ -23,7 +23,7 @@ export default function LspAppBar() {
     },
     {
       description: 'Contact',
-      href: '/contact'
+      href: '/lsp/contact'
     },
     {
       description: 'IDAC',
@@ -44,7 +44,7 @@ export default function LspAppBar() {
         <List sx={{ display: { xs: 'none', md: 'flex' } }}>
           {menus.map(menu => (
             <ListItem key={menu.href} sx={{ width: 'auto', }}>
-              <Link href={menu.href} color="inherit" underline="none">
+              <Link href={menu.href} color="common.white" underline="none">
                 {menu.description}
               </Link>
             </ListItem>

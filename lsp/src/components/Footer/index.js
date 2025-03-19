@@ -46,7 +46,6 @@ function Footer() {
                 <Typography
                   sx={{
                     fontSize: '24px',
-                    color: '#000',
                     fontWeight: 'normal',
                     paddingLeft: '24px',
                   }}
@@ -60,7 +59,7 @@ function Footer() {
               </Box>
               <Typography
                 variant="body2"
-                sx={{ marginTop: '32px', fontSize: '14px', color: '#000', pl: 10 }}
+                sx={{ marginTop: '32px', fontSize: '14px', pl: 10 }}
               >
                 Av. Pastor Martin Luther King Jr, 126 - Del Castilho
                 <br />

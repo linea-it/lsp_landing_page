@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 export default function LspAbout() {
   return (
     <Box>
-      <Container mt={4}>
-        <Grid container spacing={8}>
+      <Container>
+        <Grid container spacing={8} mt={4}>
           <Grid item xs={12}>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="span">
