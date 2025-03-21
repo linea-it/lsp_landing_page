@@ -8,26 +8,33 @@ export default function LspBanner() {
     <Box sx={{
       background: 'url(/stars.gif)',
       backgroundSize: 'cover',
-      minHeight: 400
+      minHeight: 400,
     }}>
       <Grid
         container
-        direction="row"
+        direction="column"
         sx={{
           justifyContent: "center",
           alignItems: "stretch",
+          textAlign: "center",
         }}
       >
-        <Grid item xs={12} mt={10}>
+        <Grid
+          size={12}
+          mt={10}
+        >
           <Typography
             variant="banner"
             sx={{
-              fontSize: "4rem",
+              fontSize: "4em",
               lineHeight: 1.167,
               fontWeight: 300,
             }}>LIneA Science Platform</Typography>
         </Grid>
-        <Grid item xs={12} mt={4}>
+        <Grid
+          size={12}
+          mt={4}
+        >
           <Typography
             variant="body1"
             color="common.white"

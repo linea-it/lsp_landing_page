@@ -1,0 +1,116 @@
+import React from 'react'
+import Grid from '@mui/material/Grid2';
+import Link from '@mui/material/Link';
+import ToolsCard from '@/components/ToolsCard';
+
+const tools = [
+  {
+    title: 'JupyterHub (public)',
+    description: 'Multi-user development environment based on iPython Notebooks ideal for data exploration and analysis.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'JupyterHub logo',
+    href: 'https://jupyter.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'LIneA Occultation Prediction Database (public)',
+    description: 'Regularly updated predictions for stellar occultations by small Solar System objects.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'occultation predict database logo',
+    href: 'https://solarsystem.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'OnDemand (members only)',
+    description: 'Access interface to the HPC environment via Linux Terminal or Jupyter Notebooks with monitoring tools.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'OnDemand logo',
+    href: 'https://ondemand.linea.org.br/',
+    isPublic: false
+  },
+  {
+    title: 'DES Science Server (public)',
+    description: 'Access to DES images with custom visualization tools built on top of Aladin and Visiomatic.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'des science server logo',
+    href: 'https://scienceserver.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'User Query (public)',
+    description: 'A user-friendly interface for Postgres database access based on daiquiri that allows the creation of temporary tables in MyDB users\' space, which is integrated with Jupyter and visualization tools.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'daiquiri logo',
+    href: 'https://userquery.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'Sky Viewer (public)',
+    description: '(coming soon)',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'aladin logo',
+    href: 'https://skyviewer.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'SDSS Sky Server (public)',
+    description: 'Access to all the data from the SDSS with SQL sample queries and API for programmatic access and web services such as Image Cutou, VO Services, Advanced Search, and Cross-id.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'sdss sky server logo',
+    href: 'http://skyserver.linea.org.br/sciserver/',
+    isPublic: true
+  },
+  {
+    title: 'Target Viewer (public)',
+    description: '(coming soon)',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'target viewer logo',
+    href: 'https://targetviewer.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'MaNGA Portal (public)',
+    description: 'A custom tool to visualize the reduced IFU data and the results of the data analysis showing maps of various physical quantities derived from the spectra.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'sdss sky server logo',
+    href: 'https://manga.linea.org.br/',
+    isPublic: true
+  },
+  {
+    title: 'DES Science Portal (members only)',
+    description: 'Legacy service of provenance information maintenance for DES data preparation and science workflow results. Its original infrastructure has been decommissioned.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'des science server logo',
+    href: 'https://scienceportal.linea.org.br/',
+    isPublic: false
+  },
+]
+
+export default function LspTools() {
+  return (
+    <Grid
+      container
+      direction="row"
+      spacing={2}
+      ml={4}
+      mr={4}
+      sx={{
+        justifyContent: "center",
+        alignItems: "stretch",
+      }}
+    >
+      {tools.map((tool, idx) => (
+        <Grid size={{ xs: 12, md: 6 }} key={`tool-${idx}`}>
+          <Link href={tool.href} >
+            <ToolsCard
+              title={tool.title}
+              description={tool.description}
+              imageSrc={tool.imageSrc}
+              imageAlt={tool.image}
+            />
+          </Link>
+        </Grid>
+      ))}
+    </Grid>
+  );
+}
