@@ -22,9 +22,10 @@ Clone the repository to temp folder, copy docker-compose.production.yml to appli
 Steps Considering srvnode04 as host, application port as 8189 and application folder as scienceplatform-dev.
 
 ```bash
-git clone https://github.com/linea-it/lsp_landing_page.git lsp_temp \
+mkdir scienceplatform-dev \
+&& git clone https://github.com/linea-it/lsp_landing_page.git lsp_temp \
 && cp lsp_temp/docker-compose.staging.yml scienceplatform-dev/docker-compose.yml \ 
-&& rm -r lsp_temp \
+&& rm -rf lsp_temp \
 && cd scienceplatform-dev \
 && docker compose pull frontend \
 && docker compose up -d
@@ -40,9 +41,10 @@ Clone the repository to temp folder, copy docker-compose.production.yml to appli
 Steps Considering srvnode04 as host, application port as 8190 and application folder as scienceplatform.
 
 ```bash
-git clone https://github.com/linea-it/lsp_landing_page.git lsp_temp \
+mkdir scienceplatform \
+&& git clone https://github.com/linea-it/lsp_landing_page.git lsp_temp \
 && cp lsp_temp/docker-compose.production.yml scienceplatform/docker-compose.yml \ 
-&& rm -r lsp_temp \
+&& rm -rf lsp_temp \
 && cd scienceplatform \
 && docker compose pull frontend \
 && docker compose up -d
