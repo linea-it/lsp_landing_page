@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
 
 export default function LspBanner() {
   return (
@@ -23,13 +24,19 @@ export default function LspBanner() {
           size={12}
           mt={10}
         >
-          <Typography
-            variant="banner"
-            sx={{
-              fontSize: "4em",
-              lineHeight: 1.167,
-              fontWeight: 300,
-            }}>LIneA Science Platform</Typography>
+          <Stack direction="row" spacing={2} sx={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+            <Typography
+              variant="banner"
+              sx={{
+                fontSize: "4em",
+                lineHeight: 1.167,
+                fontWeight: 300,
+              }}>LIneA Science Platform</Typography>
+            <Typography variant="body1" color="info.light">Beta</Typography>
+          </Stack>
         </Grid>
         <Grid
           size={12}
