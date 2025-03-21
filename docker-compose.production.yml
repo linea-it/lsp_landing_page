@@ -1,0 +1,8 @@
+services:
+  frontend:
+    image: linea/lsp_landing_page:v1.0
+    user: 1000:1000
+    working_dir: /app
+    command: yarn start
+    ports:
+      - 8190:3000
