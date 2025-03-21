@@ -11,7 +11,7 @@ export default function LspContact() {
     <Box>
       <Container>
         <Grid container spacing={2} mt={4}>
-          <Grid item xs={12}>
+          <Grid xs={12}>
             <Typography variant="h6">Contact</Typography>
             <Typography variant="body1" component="span">
               <p>Comments, questions, suggestions?</p>

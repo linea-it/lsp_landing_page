@@ -11,7 +11,7 @@ export default function LspAbout() {
     <Box>
       <Container>
         <Grid container spacing={8} mt={4}>
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="span">
               <p>
