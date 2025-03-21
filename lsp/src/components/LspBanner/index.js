@@ -27,11 +27,16 @@ export default function LspBanner() {
           <Stack direction="row" spacing={2} sx={{
             justifyContent: "center",
             alignItems: "center",
+            ml: 4,
+            mr: 4,
           }}>
             <Typography
               variant="banner"
               sx={{
-                fontSize: "4em",
+                fontSize: {
+                  xs: "2em",
+                  md: "4em"
+                },
                 lineHeight: 1.167,
                 fontWeight: 300,
               }}>LIneA Science Platform</Typography>
@@ -40,16 +45,16 @@ export default function LspBanner() {
         </Grid>
         <Grid
           size={12}
-          mt={4}
         >
           <Typography
             variant="body1"
             color="common.white"
+            m={4}
           >
             Welcome to the LIneA Science Platform, a collection of web-based services to offer data access and analysis tools for the astronomical community.
           </Typography>
         </Grid>
       </Grid>
-    </Box>
+    </Box >
   )
 }

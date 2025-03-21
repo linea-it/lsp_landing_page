@@ -94,14 +94,10 @@ export default function LspTools() {
       spacing={2}
       ml={4}
       mr={4}
-      sx={{
-        justifyContent: "center",
-        alignItems: "stretch",
-      }}
+      alignItems="stretch"
     >
       {tools.map((tool, idx) => (
         <Grid size={{ xs: 12, md: 6 }} key={`tool-${idx}`}>
-          {/* <Link href={tool.href} underline="hover"> */}
           <ToolsCard
             title={tool.title}
             description={tool.description}
@@ -110,7 +106,6 @@ export default function LspTools() {
             href={tool.href}
             isPrivate={tool.isPrivate}
           />
-          {/* </Link> */}
         </Grid>
       ))}
     </Grid>

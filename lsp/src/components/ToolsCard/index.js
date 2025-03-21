@@ -16,19 +16,28 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
   return (
     // Utilizei CardActionArea para ter o efeito de over e click no card inteiro
     // Utilizei o Link para ter o comportamento de exibir a url no navegador. 
-    <CardActionArea>
+    <CardActionArea
+      sx={{
+        height: '100%',
+      }}>
       <Link href={href} underline="none">
         <Card
           elevation={3}
           sx={{
-            display: 'flex'
+            display: 'flex',
+            height: '100%',
           }}
         >
           <CardMedia
             component="img"
             sx={{
-              width: 200,
-              // height: 200 
+              width: {
+                xs: 100,
+                md: 150,
+                lg: 200,
+                objectFit: "contain",
+                padding: '1em',
+              }
             }}
             image={imageSrc}
             alt={imageAlt}
