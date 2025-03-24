@@ -1,6 +1,5 @@
 import React from 'react'
 import Grid from '@mui/material/Grid2';
-import Link from '@mui/material/Link';
 import ToolsCard from '@/components/ToolsCard';
 
 const tools = [
@@ -97,7 +96,7 @@ export default function LspTools() {
       alignItems="stretch"
     >
       {tools.map((tool, idx) => (
-        <Grid size={{ xs: 12, md: 6 }} key={`tool-${idx}`}>
+        <Grid size={{ xs: 12, md: 6 }} key={`lsp-tool-${idx}`}>
           <ToolsCard
             title={tool.title}
             description={tool.description}
