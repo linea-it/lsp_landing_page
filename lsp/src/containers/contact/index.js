@@ -21,7 +21,7 @@ export default function ContactContainer() {
               >
                 LIneA Science Plataform
               </Link>{' '}
-              repository on GitHub, or contact our team.
+              repository on GitHub or contact our team.
             </p>
             <p>
               Technical support:{' '}
