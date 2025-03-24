@@ -83,6 +83,14 @@ const tools = [
     href: 'https://scienceportal.linea.org.br/',
     isPrivate: true
   },
+  {
+    title: 'PZ Server',
+    description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'pz server logo',
+    href: 'https://pzserver.linea.org.br/',
+    isPrivate: true
+  },
 ]
 
 export default function LspTools() {

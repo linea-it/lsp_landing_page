@@ -19,11 +19,7 @@ export default function IdacAppBar() {
     },
     {
       description: 'Documentation',
-      href: '/idac/documentation'
-    },
-    {
-      description: 'Tutorials',
-      href: '/idac/tutorials'
+      href: 'https://docs.linea.org.br/'
     },
     {
       description: 'Contact',
