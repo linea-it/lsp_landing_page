@@ -71,6 +71,21 @@ export default function IdacBanner() {
               }}>Data Access Center</Typography>
             <Typography variant="body1" color="info.light">Beta</Typography>
           </Stack>
+        </Grid>
+        <Grid
+          size={12}
+        >
+          <Typography
+            variant="body1"
+            color="common.white"
+            m={2}
+          >
+            Welcome to the Brazilian IDAC’s Science Platform, a collection of web-based services that offer data access and analysis tools for the LSST community.
+          </Typography>
+        </Grid>
+        <Grid
+          size={12}
+        >
           <Image
             src="/lsst_idac_logo_180x180.png"
             alt="Lsst IDAC Brazilian logo"

@@ -19,9 +19,9 @@ export default function ContactContainer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                LIneA Science Plataform
+                plataform’s repository
               </Link>{' '}
-              repository on GitHub or contact our team.
+              on GitHub or contact our team.
             </p>
             <p>
               Technical support:{' '}

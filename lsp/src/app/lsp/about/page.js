@@ -15,25 +15,7 @@ export default function LspAbout() {
             <Typography variant="h6">About</Typography>
             <Typography variant="body1" component="span">
               <p>
-                The LIneA Science Platform is a collection of web-based services that offer data access and analysis tools for the astronomical community. It is the central place to access the
-                {' '}
-                <Link
-                  href="http://www.lsst.org/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Legacy Survey of Space and Time
-                </Link>{' '}
-                (LSST) data hosted in the
-                {' '}
-                <Link
-                  href="https://linea.org.br/o-que-e-linea/centro-de-dados/visao-global/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Brazilian Independent Data Acces Center
-                </Link>{' '}
-                (IDAC) (LSST credentials required), which is available to the whole LSST community.
+                The LIneA Science Platform is a collection of web-based services that offer data access and analysis tools for the astronomical community.
               </p>
               <p>
                 The platform offers storage space, computing power, and help from specialists to support the
@@ -68,15 +50,6 @@ export default function LspAbout() {
                 </Link>{' '}
                 (SDSS) (institutional or Google account required). It will also provide access to LSST public data releases when they become available in the future.
               </p>
-              <p>
-                <strong>Jupyterhub</strong> - a multi-user interactive development tool based on iPython Notebooks that allows users to combine interactive code, output results, structured text, and multimedia resources in the same document.
-              </p>
-              <p>
-                <strong>Science Server</strong> - a set of tools to explore, visualize, and interact with coadded images from photometric surveys. The current version contains images from the two public data releases of DES (DR1 and DR2).
-              </p>
-              <p>
-                <strong>User Query</strong> - a service that provides users with access to the catalog database to explore tabular data and create user-generated samples. The current version contains catalogs from the two public data releases of DES (DR1 and DR2).
-              </p>
             </Typography>
             <Typography variant="h6">About us</Typography>
             <Typography variant="body1" component="span">
@@ -102,7 +75,7 @@ export default function LspAbout() {
                   rel="noreferrer"
                 >
                   Website
-                </Link>{' '}.
+                </Link>.
               </p>
             </Typography>
           </Grid>
