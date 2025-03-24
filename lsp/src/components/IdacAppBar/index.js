@@ -19,7 +19,7 @@ export default function IdacAppBar() {
     },
     {
       description: 'Documentation',
-      href: '/idac/Documentation'
+      href: '/idac/documentation'
     },
     {
       description: 'Tutorials',
