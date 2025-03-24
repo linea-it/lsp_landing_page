@@ -1,12 +1,23 @@
+import React from 'react'
+import Box from '@mui/material/Box';
+import LspBanner from '@/components/LspBanner';
+import Footer from '@/components/Footer';
+import LspTools from '@/containers/LspTools';
 
 export default function IdacHome() {
   return (
-    <div>
-      <main>
-        <div>
-          IDAC Home Page
-        </div>
-      </main>
-    </div>
+    <Box>
+      <LspBanner />
+      <Box mt={4} sx={{
+        maxWidth: 'lg',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }}>
+        IDAC
+        {/* <LspTools /> */}
+      </Box>
+      <Footer />
+    </Box>
+
   );
 }
