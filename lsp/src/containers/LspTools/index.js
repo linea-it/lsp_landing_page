@@ -52,14 +52,6 @@ const tools = [
     isPrivate: false
   },
   {
-    title: 'SDSS Sky Server',
-    description: 'Access to all the data from the SDSS with SQL sample queries and API for programmatic access and web services such as Image Cutou, VO Services, Advanced Search, and Cross-id.',
-    imageSrc: 'lsp_tools_logos/sdss_sky_server_logo_200x200.png',
-    imageAlt: 'sdss sky server logo',
-    href: 'http://skyserver.linea.org.br/sciserver/',
-    isPrivate: false
-  },
-  {
     title: 'Target Viewer',
     description: '(coming soon)',
     imageSrc: 'placeholder_200x200.png',
@@ -68,11 +60,19 @@ const tools = [
     isPrivate: false
   },
   {
-    title: 'MaNGA Portal',
-    description: 'A custom tool to visualize the reduced IFU data and the results of the data analysis showing maps of various physical quantities derived from the spectra.',
-    imageSrc: 'lsp_tools_logos/manga_portal_logo_black_200x200.png',
+    title: 'PZ Server',
+    description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
+    imageSrc: 'placeholder_200x200.png',
+    imageAlt: 'pz server logo',
+    href: 'https://pzserver.linea.org.br/',
+    isPrivate: true
+  },
+  {
+    title: 'SDSS Sky Server',
+    description: 'Access to all the data from the SDSS with SQL sample queries and API for programmatic access and web services such as Image Cutou, VO Services, Advanced Search, and Cross-id.',
+    imageSrc: 'lsp_tools_logos/sdss_sky_server_logo_200x200.png',
     imageAlt: 'sdss sky server logo',
-    href: 'https://manga.linea.org.br/',
+    href: 'http://skyserver.linea.org.br/sciserver/',
     isPrivate: false
   },
   {
@@ -84,12 +84,12 @@ const tools = [
     isPrivate: true
   },
   {
-    title: 'PZ Server',
-    description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
-    imageSrc: 'placeholder_200x200.png',
-    imageAlt: 'pz server logo',
-    href: 'https://pzserver.linea.org.br/',
-    isPrivate: true
+    title: 'MaNGA Portal',
+    description: 'A custom tool to visualize the reduced IFU data and the results of the data analysis showing maps of various physical quantities derived from the spectra.',
+    imageSrc: 'lsp_tools_logos/manga_portal_logo_black_200x200.png',
+    imageAlt: 'sdss sky server logo',
+    href: 'https://manga.linea.org.br/',
+    isPrivate: false
   },
 ]
 
