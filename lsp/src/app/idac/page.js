@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/material/Box';
 import IdacBanner from '@/components/IdacBanner';
 import Footer from '@/components/Footer';
-import LspTools from '@/containers/LspTools';
+import IdacTools from '@/containers/IdacTools';
 
 export default function IdacHome() {
   return (
@@ -13,8 +13,7 @@ export default function IdacHome() {
         marginLeft: 'auto',
         marginRight: 'auto',
       }}>
-        IDAC
-        {/* <LspTools /> */}
+        <IdacTools />
       </Box>
       <Footer />
     </Box>
