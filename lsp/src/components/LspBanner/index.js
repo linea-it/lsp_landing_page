@@ -51,7 +51,7 @@ export default function LspBanner() {
             color="common.white"
             m={4}
           >
-            Welcome to the LIneA Science Platform, a collection of web-based services to offer data access and analysis tools for the astronomical community.
+            Welcome to the LIneA Science Platform, a collection of web-based services that offer data access and analysis tools for the astronomical community.
           </Typography>
         </Grid>
       </Grid>
