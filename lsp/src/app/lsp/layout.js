@@ -22,8 +22,7 @@ const roboto = Roboto({
 export default function LspRootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <body className={roboto.variable}> */}
-      <body>
+      <body className={roboto.variable}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
