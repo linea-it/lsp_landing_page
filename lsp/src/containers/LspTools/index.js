@@ -38,7 +38,7 @@ const tools = [
   {
     title: 'User Query',
     description: 'A user-friendly interface for Postgres database access based on daiquiri that allows the creation of temporary tables in MyDB users\' space, which is integrated with Jupyter and visualization tools.',
-    imageSrc: 'lsp_tools_logos/user_query_daiquiri_logo_200x200.png',
+    imageSrc: 'lsp_tools_logos/userquery_logo_200x200.png',
     imageAlt: 'daiquiri logo',
     href: 'https://userquery.linea.org.br/',
     isPrivate: false
@@ -46,7 +46,7 @@ const tools = [
   {
     title: 'Sky Viewer',
     description: '(coming soon)',
-    imageSrc: 'lsp_tools_logos/sky_viewer_aladin_logo_200x200.png',
+    imageSrc: 'lsp_tools_logos/skyviewer_logo_200x200.png',
     imageAlt: 'aladin logo',
     href: 'https://skyviewer-dev.linea.org.br/',
     isPrivate: false
@@ -54,7 +54,7 @@ const tools = [
   {
     title: 'Target Viewer',
     description: '(coming soon)',
-    imageSrc: 'placeholder_200x200.png',
+    imageSrc: 'lsp_tools_logos/target_viewer_logo_200x200.png',
     imageAlt: 'target viewer logo',
     href: 'https://targetviewer-dev.linea.org.br/',
     isPrivate: false
@@ -62,7 +62,7 @@ const tools = [
   {
     title: 'PZ Server',
     description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
-    imageSrc: 'placeholder_200x200.png',
+    imageSrc: 'lsp_tools_logos/pzserver_logo_200x200.png',
     imageAlt: 'pz server logo',
     href: 'https://pzserver-dev.linea.org.br/',
     isPrivate: true
