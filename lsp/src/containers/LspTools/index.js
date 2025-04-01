@@ -48,7 +48,7 @@ const tools = [
     description: '(coming soon)',
     imageSrc: 'lsp_tools_logos/sky_viewer_aladin_logo_200x200.png',
     imageAlt: 'aladin logo',
-    href: 'https://skyviewer.linea.org.br/',
+    href: 'https://skyviewer-dev.linea.org.br/',
     isPrivate: false
   },
   {
@@ -56,7 +56,7 @@ const tools = [
     description: '(coming soon)',
     imageSrc: 'placeholder_200x200.png',
     imageAlt: 'target viewer logo',
-    href: 'https://targetviewer.linea.org.br/',
+    href: 'https://targetviewer-dev.linea.org.br/',
     isPrivate: false
   },
   {
@@ -64,7 +64,7 @@ const tools = [
     description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
     imageSrc: 'placeholder_200x200.png',
     imageAlt: 'pz server logo',
-    href: 'https://pzserver.linea.org.br/',
+    href: 'https://pzserver-dev.linea.org.br/',
     isPrivate: true
   },
   {
