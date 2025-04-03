@@ -29,7 +29,7 @@ const tools = [
   },
   {
     title: 'Target Viewer',
-    description: '(coming soon)',
+    description: 'Visualization tool for astronomical images based on a list of target objects previously defined by the user. (UNDER DEVELOPMENT)',
     imageSrc: 'idac_tools_logos/target_viewer_logo_200x200.png',
     imageAlt: 'target viewer logo',
     href: 'https://targetviewer-dev.linea.org.br/',
@@ -37,7 +37,7 @@ const tools = [
   },
   {
     title: 'Sky Viewer',
-    description: '(coming soon)',
+    description: 'Visualization tool based on Aladin that displays HIPS images and catalog overlays. (UNDER DEVELOPMENT)',
     imageSrc: 'idac_tools_logos/skyviewer_logo_200x200.png',
     imageAlt: 'aladin logo',
     href: 'https://skyviewer-dev.linea.org.br/',
