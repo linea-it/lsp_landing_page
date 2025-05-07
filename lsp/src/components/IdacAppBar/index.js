@@ -48,7 +48,7 @@ export default function IdacAppBar(props) {
     },
     {
       description: 'RSP',
-      href: 'https://usdf-rsp.slac.stanford.edu/'
+      href: 'https://data.lsst.cloud/'
     }
   ]
 
