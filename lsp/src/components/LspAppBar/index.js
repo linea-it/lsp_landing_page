@@ -39,6 +39,10 @@ export default function LspAppBar(props) {
       href: 'https://docs.linea.org.br/'
     },
     {
+      description: 'Monitoring',
+      href: 'https://www.linea.org.br/grafana/'
+    },
+    {
       description: 'Contact',
       href: '/lsp/contact'
     },
