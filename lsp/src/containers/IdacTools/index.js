@@ -51,6 +51,14 @@ const tools = [
     href: 'https://pzserver-dev.linea.org.br/',
     isPrivate: true
   },
+  {
+    title: 'LIneA Occultation Prediction Database',
+    description: 'Regularly updated predictions for stellar occultations by small Solar System objects.',
+    imageSrc: 'idac_tools_logos/occultation_database_logo_200x200.png',
+    imageAlt: 'occultation predict database logo',
+    href: 'https://solarsystem.linea.org.br/',
+    isPrivate: false
+  },
 ]
 
 export default function IdacTools() {
