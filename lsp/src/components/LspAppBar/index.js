@@ -15,6 +15,8 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 
+import SignInButton from '@/components/SignInButton';
+
 
 export default function LspAppBar(props) {
   const { window } = props;
@@ -69,6 +71,7 @@ export default function LspAppBar(props) {
           </Link>
         ))}
       </List>
+      <Image src="/linea-symbol.svg" alt="LIneA" width={52} height={40} />
     </Box>
   );
 
@@ -95,6 +98,7 @@ export default function LspAppBar(props) {
             ))}
           </List>
           <Box sx={{ flexGrow: 1 }} />
+          <SignInButton />
           <IconButton
             color="inherit"
             aria-label="open drawer"
