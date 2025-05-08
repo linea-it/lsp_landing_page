@@ -91,6 +91,15 @@ const tools = [
     href: 'https://manga.linea.org.br/',
     isPrivate: false
   },
+  {
+    title: 'Solar System Portal',
+    description: '',
+    imageSrc: 'lsp_tools_logos/solar_system_logo_200x200.png',
+    imageAlt: 'solar system portal logo',
+    href: 'https://solarsystem.linea.org.br/dashboard',
+    isPrivate: false
+  }
+
 ]
 
 export default function LspTools() {
