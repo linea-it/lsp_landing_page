@@ -39,13 +39,13 @@ export default function IdacBanner() {
             />
             <Typography
               variant="banner"
+              component={"h1"}
               sx={{
                 fontSize: {
                   xs: "1.5em",
                   md: "4em"
                 },
                 lineHeight: 1.167,
-                fontWeight: 300,
               }}>LSST Brazilian Independent</Typography>
           </Stack>
         </Grid>
