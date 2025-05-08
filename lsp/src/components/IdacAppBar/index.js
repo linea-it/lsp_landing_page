@@ -80,7 +80,7 @@ export default function IdacAppBar(props) {
 
   return (
     <React.Fragment>
-      <AppBar position="static"
+      <AppBar position="fixed"
         sx={{
           background: '-webkit-linear-gradient(120deg,  #31297f, #0989cb)',
         }}
@@ -110,6 +110,9 @@ export default function IdacAppBar(props) {
           </IconButton>
         </Toolbar>
       </AppBar>
+      {/* https://mui.com/material-ui/react-app-bar/#fixed-placement */}
+      {/* The toolbar is used to create space for the AppBar */}
+      <Toolbar />
       <nav>
         <Drawer
           container={container}

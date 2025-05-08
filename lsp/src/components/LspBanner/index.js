@@ -32,13 +32,13 @@ export default function LspBanner() {
           }}>
             <Typography
               variant="banner"
+              component={"h1"}
               sx={{
                 fontSize: {
                   xs: "2em",
                   md: "4em"
                 },
                 lineHeight: 1.167,
-                fontWeight: 300,
               }}>LIneA Science Platform</Typography>
             <Typography variant="body1" color="info.light">Beta</Typography>
           </Stack>
