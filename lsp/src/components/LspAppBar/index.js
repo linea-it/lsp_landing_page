@@ -28,27 +28,33 @@ export default function LspAppBar(props) {
   const navItems = [
     {
       description: 'Home',
-      href: '/lsp'
+      href: '/lsp',
+      target: '_self',
     },
     {
       description: 'About',
-      href: '/lsp/about'
+      href: '/lsp/about',
+      target: '_blank',
     },
     {
       description: 'Documentation',
-      href: 'https://docs.linea.org.br/'
+      href: 'https://docs.linea.org.br/',
+      target: '_blank',
     },
     {
       description: 'Monitoring',
-      href: 'https://www.linea.org.br/grafana/'
+      href: 'https://www.linea.org.br/grafana/',
+      target: '_blank',
     },
     {
       description: 'Contact',
-      href: '/lsp/contact'
+      href: '/lsp/contact',
+      target: '_blank',
     },
     {
       description: 'IDAC',
-      href: '/idac'
+      href: '/idac',
+      target: '_blank',
     }
   ]
 
@@ -60,10 +66,10 @@ export default function LspAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item, idx) => (
-          <Link key={`navitem-${idx}-item`} href={item.href} underline="none" color="inherit">
+          <Link key={`navitem-${idx}-item`} href={item.href} underline="none" color="inherit" target={item.target}>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemText primary={item.description} href={item.href} />
+                <ListItemText primary={item.description} href={item.href} target={item.target} />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -88,7 +94,7 @@ export default function LspAppBar(props) {
           <List sx={{ display: { xs: 'none', md: 'flex' } }}>
             {navItems.map(item => (
               <ListItem key={item.href} sx={{ width: 'auto', }}>
-                <Link href={item.href} color="common.white" underline="none">
+                <Link href={item.href} color="common.white" underline="none" target={item.target}>
                   {item.description}
                 </Link>
               </ListItem>

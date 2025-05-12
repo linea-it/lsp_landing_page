@@ -28,31 +28,38 @@ export default function IdacAppBar(props) {
   const navItems = [
     {
       description: 'Home',
-      href: '/idac'
+      href: '/idac',
+      target: '_self',
     },
     {
       description: 'About',
-      href: '/idac/about'
+      href: '/idac/about',
+      target: '_blank',
     },
     {
       description: 'Documentation',
-      href: 'https://docs.linea.org.br/'
+      href: 'https://docs.linea.org.br/',
+      target: '_blank',
     },
     {
       description: 'Monitoring',
-      href: 'https://www.linea.org.br/grafana/'
+      href: 'https://www.linea.org.br/grafana/',
+      target: '_blank',
     },
     {
       description: 'Contact',
-      href: '/idac/contact'
+      href: '/idac/contact',
+      target: '_blank',
     },
     {
       description: 'LSP',
-      href: '/lsp'
+      href: '/lsp',
+      target: '_blank',
     },
     {
       description: 'RSP',
-      href: 'https://data.lsst.cloud/'
+      href: 'https://data.lsst.cloud/',
+      target: '_blank',
     }
   ]
 
@@ -64,10 +71,10 @@ export default function IdacAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item, idx) => (
-          <Link key={`navitem-${idx}-item`} href={item.href} underline="none" color="inherit">
+          <Link key={`navitem-${idx}-item`} href={item.href} underline="none" color="inherit" target={item.target}>
             <ListItem disablePadding>
               <ListItemButton>
-                <ListItemText primary={item.description} href={item.href} />
+                <ListItemText primary={item.description} href={item.href} target={item.target} />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -92,7 +99,7 @@ export default function IdacAppBar(props) {
           <List sx={{ display: { xs: 'none', md: 'flex' } }}>
             {navItems.map(item => (
               <ListItem key={item.href} sx={{ width: 'auto', }}>
-                <Link href={item.href} color="common.white" underline="none">
+                <Link href={item.href} color="common.white" underline="none" target={item.target}>
                   {item.description}
                 </Link>
               </ListItem>

@@ -20,7 +20,7 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
       sx={{
         height: '100%',
       }}>
-      <Link href={href} underline="none">
+      <Link href={href} underline="none" target="_blank">
         <Card
           elevation={3}
           sx={{
