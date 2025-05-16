@@ -12,14 +12,6 @@ const tools = [
     isPrivate: false
   },
   {
-    title: 'LIneA Occultation Prediction Database',
-    description: 'Regularly updated predictions for stellar occultations by small Solar System objects.',
-    imageSrc: 'lsp_tools_logos/occultation_database_logo_200x200.png',
-    imageAlt: 'occultation predict database logo',
-    href: 'https://solarsystem.linea.org.br/',
-    isPrivate: false
-  },
-  {
     title: 'OnDemand',
     description: 'Access interface to the HPC environment via Linux Terminal or Jupyter Notebooks with monitoring tools.',
     imageSrc: 'lsp_tools_logos/open_ondemand_logo_200x200.png',
@@ -28,27 +20,11 @@ const tools = [
     isPrivate: true
   },
   {
-    title: 'DES Science Server',
-    description: 'Access to DES images with custom visualization tools built on top of Aladin and Visiomatic.',
-    imageSrc: 'lsp_tools_logos/des_science_server_logo_200x200.png',
-    imageAlt: 'des science server logo',
-    href: 'https://scienceserver.linea.org.br/',
-    isPrivate: false
-  },
-  {
     title: 'User Query',
     description: 'A user-friendly interface for Postgres database access based on daiquiri that allows the creation of temporary tables in MyDB users\' space, which is integrated with Jupyter and visualization tools.',
     imageSrc: 'lsp_tools_logos/userquery_logo_200x200.png',
     imageAlt: 'daiquiri logo',
-    href: 'https://userquery.linea.org.br/',
-    isPrivate: false
-  },
-  {
-    title: 'Sky Viewer',
-    description: 'Visualization tool based on Aladin that displays HIPS images and catalog overlays. (UNDER DEVELOPMENT)',
-    imageSrc: 'lsp_tools_logos/skyviewer_logo_200x200.png',
-    imageAlt: 'aladin logo',
-    href: 'https://skyviewer-dev.linea.org.br/',
+    href: 'https://userquery.linea.org.br/query/',
     isPrivate: false
   },
   {
@@ -60,12 +36,36 @@ const tools = [
     isPrivate: false
   },
   {
+    title: 'Sky Viewer',
+    description: 'Visualization tool based on Aladin that displays HIPS images and catalog overlays. (UNDER DEVELOPMENT)',
+    imageSrc: 'lsp_tools_logos/skyviewer_logo_200x200.png',
+    imageAlt: 'aladin logo',
+    href: 'https://skyviewer-dev.linea.org.br/',
+    isPrivate: false
+  },
+  {
     title: 'PZ Server',
     description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
     imageSrc: 'lsp_tools_logos/pzserver_logo_200x200.png',
     imageAlt: 'pz server logo',
     href: 'https://pzserver-dev.linea.org.br/',
     isPrivate: true
+  },
+  {
+    title: 'LIneA Occultation Prediction Database',
+    description: 'Regularly updated predictions for stellar occultations by small Solar System objects.',
+    imageSrc: 'lsp_tools_logos/occultation_database_logo_200x200.png',
+    imageAlt: 'occultation predict database logo',
+    href: 'https://solarsystem.linea.org.br/',
+    isPrivate: false
+  },
+  {
+    title: 'DES Science Server',
+    description: 'Access to DES images with custom visualization tools built on top of Aladin and Visiomatic.',
+    imageSrc: 'lsp_tools_logos/des_science_server_logo_200x200.png',
+    imageAlt: 'des science server logo',
+    href: 'https://scienceserver.linea.org.br/',
+    isPrivate: false
   },
   {
     title: 'SDSS Sky Server',
@@ -99,7 +99,6 @@ const tools = [
     href: 'https://solarsystem.linea.org.br/dashboard',
     isPrivate: false
   }
-
 ]
 
 export default function LspTools() {
