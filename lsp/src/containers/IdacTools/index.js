@@ -24,7 +24,7 @@ const tools = [
     description: 'A user-friendly interface for Postgres database access based on daiquiri that allows the creation of temporary tables in MyDB users\' space, which is integrated with Jupyter and visualization tools.',
     imageSrc: 'idac_tools_logos/userquery_logo_200x200.png',
     imageAlt: 'daiquiri logo',
-    href: 'https://userquery.linea.org.br/',
+    href: 'https://userquery.linea.org.br/query/',
     isPrivate: false
   },
   {
