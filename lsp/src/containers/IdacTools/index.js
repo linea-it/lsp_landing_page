@@ -72,7 +72,7 @@ export default function IdacTools() {
       alignItems="stretch"
     >
       {tools.map((tool, idx) => (
-        <Grid size={{ xs: 12, md: 6 }} key={`idac-tool-${idx}`}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }} key={`idac-tool-${idx}`}>
           <ToolsCard
             title={tool.title}
             description={tool.description}

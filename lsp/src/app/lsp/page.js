@@ -9,7 +9,7 @@ export default function LspHome() {
     <Box>
       <LspBanner />
       <Box mt={4} sx={{
-        maxWidth: 'lg',
+        maxWidth: 'xl',
         marginLeft: 'auto',
         marginRight: 'auto',
       }}>

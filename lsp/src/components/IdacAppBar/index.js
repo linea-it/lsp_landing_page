@@ -29,37 +29,37 @@ export default function IdacAppBar(props) {
     {
       description: 'Home',
       href: '/idac',
-      target: '_self',
+      target: '_self'
     },
     {
       description: 'About',
       href: '/idac/about',
-      target: '_blank',
+      target: '_blank'
     },
     {
       description: 'Documentation',
       href: 'https://docs.linea.org.br/',
-      target: '_blank',
+      target: '_blank'
     },
     {
       description: 'Monitoring',
       href: 'https://www.linea.org.br/grafana/',
-      target: '_blank',
+      target: '_blank'
     },
     {
       description: 'Contact',
       href: '/idac/contact',
-      target: '_blank',
+      target: '_blank'
     },
     {
       description: 'LSP',
       href: '/lsp',
-      target: '_blank',
+      target: '_blank'
     },
     {
       description: 'RSP',
       href: 'https://data.lsst.cloud/',
-      target: '_blank',
+      target: '_blank'
     }
   ]
 
@@ -93,9 +93,7 @@ export default function IdacAppBar(props) {
         }}
       >
         <Toolbar>
-          <Link href="/lsp">
-            <Image src="/linea-symbol.svg" alt="LIneA" width={52} height={40} />
-          </Link>
+          <Image src="/linea-symbol.svg" alt="LIneA" width={52} height={40} />
           <List sx={{ display: { xs: 'none', md: 'flex' } }}>
             {navItems.map(item => (
               <ListItem key={item.href} sx={{ width: 'auto', }}>

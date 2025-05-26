@@ -88,9 +88,7 @@ export default function LspAppBar(props) {
         }}
       >
         <Toolbar>
-          <Link href="/lsp">
-            <Image src="/linea-symbol.svg" alt="LIneA" width={52} height={40} />
-          </Link>
+          <Image src="/linea-symbol.svg" alt="LIneA" width={52} height={40} />
           <List sx={{ display: { xs: 'none', md: 'flex' } }}>
             {navItems.map(item => (
               <ListItem key={item.href} sx={{ width: 'auto', }}>
