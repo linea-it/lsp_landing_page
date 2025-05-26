@@ -112,7 +112,7 @@ export default function LspTools() {
       alignItems="stretch"
     >
       {tools.map((tool, idx) => (
-        <Grid size={{ xs: 12, md: 6 }} key={`lsp-tool-${idx}`}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }} key={`lsp-tool-${idx}`}>
           <ToolsCard
             title={tool.title}
             description={tool.description}

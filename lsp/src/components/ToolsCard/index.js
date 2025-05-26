@@ -33,8 +33,9 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
             sx={{
               width: {
                 xs: 100,
-                md: 150,
-                lg: 200,
+                md: 120,
+                lg: 150,
+                xl: 200,
                 objectFit: "contain",
                 padding: '1em',
               }
