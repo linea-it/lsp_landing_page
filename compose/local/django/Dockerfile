@@ -49,9 +49,23 @@ RUN groupadd --gid 1000 dev-user \
 RUN apt-get update && apt-get install --no-install-recommends -y \
   # psycopg dependencies
   libpq-dev \
+  # entrypoint
   wait-for-it \
   # Translations dependencies
   gettext \
+  # SAML dependencies
+  libaio-dev \
+  libsasl2-dev \
+  libldap2-dev \
+  libssl-dev \
+  xmlsec1 \
+  # other dependencies
+  unzip \
+  git \
+  zsh \
+  wget \
+  curl \
+  vim \
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
