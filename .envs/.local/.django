@@ -5,6 +5,8 @@ IPYTHONDIR=/app/.ipython
 
 DJANGO_DEBUG=True
 DATABASE_URL=postgres://postgres:postgres@postgres:5432/lsp
+DJANGO_UWSGI_WORKER_PROCESSES=4
+DJANGO_UWSGI_WORKER_THREADS=2
 
 # Redis
 # ------------------------------------------------------------------------------
