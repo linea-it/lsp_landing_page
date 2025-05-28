@@ -83,6 +83,7 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "drf_spectacular",
+    "django_filters",
 ]
 
 LOCAL_APPS = [
@@ -338,6 +339,13 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
+    # "DEFAULT_PAGINATION_CLASS": "common.pagination.CustomPageNumberPagination",
+    "PAGE_SIZE": 100,
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
@@ -355,3 +363,8 @@ SPECTACULAR_SETTINGS = {
 
 # LINEA Settings
 # ------------------------------------------------------------------------------
+ENVIRONMENT_NAME = env("ENVIRONMENT_NAME", default="development").lower()
+
+BASE_HOST = env("BASE_HOST", default="http://localhost")
+
+LINEA_LOGIN_URL = env("LINEA_LOGIN_URL", default="/admin/login/?next=/")

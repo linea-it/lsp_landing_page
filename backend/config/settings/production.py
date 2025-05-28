@@ -10,6 +10,12 @@ from .base import env
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env("DJANGO_SECRET_KEY")
+
+# Complete URL of the production server with protocol and port
+BASE_HOST = env("BASE_HOST", default="https://scienceplatform.linea.org.br/")
+# Url without protocol (Necessário para SAML2)
+DOMAIN = env("DOMAIN", default="scienceplatform.linea.org.br")
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["https://scienceplatform.linea.org.br"])
 

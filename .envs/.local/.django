@@ -18,3 +18,12 @@ REDIS_URL=redis://redis:6379/0
 # Flower
 CELERY_FLOWER_USER=TeDgdEwevjkIJMlCnYUsYuXJIWliUCvc
 CELERY_FLOWER_PASSWORD=1s2sW1w3OWS5YCrNnOywTzy5XGMhIpScNgKEqznVGJ7Wk17se4q5icVL6uaWRZ4R
+
+# ------------------------------------------------------------------------------
+# LIneA
+# ------------------------------------------------------------------------------
+ENVIRONMENT_NAME=development
+BASE_HOST=http://localhost
+
+# Url de login utilizada pelo frontend
+LINEA_LOGIN_URL=/admin/login/?next=/
