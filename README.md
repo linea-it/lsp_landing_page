@@ -5,8 +5,14 @@
 In root of repository: 
 
 ```bash
-docker build -f Dockerfile -t linea/lsp_landing_page:latest .
+docker build -f compose/production/frontend/Dockerfile -t linea/lsp_landing_page:frontend_$(git describe --always) .
 ```
+
+```bash
+docker build -f compose/production/django/Dockerfile -t linea/lsp_landing_page:backend_$(git describe --always) .
+```
+
+
 
 Push image to docker hub:
 
