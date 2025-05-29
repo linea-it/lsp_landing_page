@@ -1,8 +1,43 @@
 services:
+  backend: &django
+    image: linea/lsp_landing_page:backend_${IMAGE_TAG:-latest}
+    volumes:
+      - ./data/tmp:/data
+      - .logs:/logs
+      - ./certificates:/app/config/certificates
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    command: /start
+
   frontend:
-    image: linea/lsp_landing_page:v1.0
-    user: 1000:1000
-    working_dir: /app
-    command: yarn start
+    image: linea/lsp_landing_page:frontend_${IMAGE_TAG:-latest}
+    depends_on:
+      - backend
+
+  postgres:
+    image: docker.io/postgres:14
+    volumes:
+      - ./data/pg_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+  redis:
+    image: docker.io/redis:6
+    volumes:
+      - ./data/redis:/data
+
+  nginx:
+    image: nginx:latest
     ports:
-      - 8190:3000
+      - 8189:80
+    volumes:
+      # Arquivo de configuração do Ngnix para este amente
+      - ./nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
+      # Diretório onde o backend manipula arquivos, e que deve ficar acessivel ao servidor web
+      - ./data/tmp:/var/www/data
+    depends_on:
+      - backend
+      - frontend
