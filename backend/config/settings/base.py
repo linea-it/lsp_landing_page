@@ -88,7 +88,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "lsp.users",
-    # Your stuff: custom apps go here
+    "lsp.common",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -216,6 +216,7 @@ FIXTURE_DIRS = (str(APPS_DIR / "fixtures"),)
 SESSION_COOKIE_HTTPONLY = False
 # https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-httponly
 CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_NAME = "lsp.csrftoken"
 # https://docs.djangoproject.com/en/dev/ref/settings/#x-frame-options
 X_FRAME_OPTIONS = "DENY"
 
@@ -344,7 +345,7 @@ REST_FRAMEWORK = {
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ],
-    # "DEFAULT_PAGINATION_CLASS": "common.pagination.CustomPageNumberPagination",
+    "DEFAULT_PAGINATION_CLASS": "common.pagination.CustomPageNumberPagination",
     "PAGE_SIZE": 100,
 }
 

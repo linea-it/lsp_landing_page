@@ -5,7 +5,9 @@ from .base import INSTALLED_APPS
 from .base import REDIS_URL
 from .base import SPECTACULAR_SETTINGS
 from .base import env
-
+import os
+import saml2
+import saml2.saml
 # GENERAL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
@@ -38,36 +40,36 @@ CACHES = {
     },
 }
 
-# SECURITY
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#secure-proxy-ssl-header
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-# https://docs.djangoproject.com/en/dev/ref/settings/#secure-ssl-redirect
-SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
-# https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-secure
-SESSION_COOKIE_SECURE = True
-# https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-name
-SESSION_COOKIE_NAME = "__Secure-sessionid"
-# https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-secure
-CSRF_COOKIE_SECURE = True
-# https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-name
-CSRF_COOKIE_NAME = "__Secure-csrftoken"
-# https://docs.djangoproject.com/en/dev/topics/security/#ssl-https
-# https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-seconds
-# TODO: set this to 60 seconds first and then to 518400 once you prove the former works
-SECURE_HSTS_SECONDS = 60
-# https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-include-subdomains
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
-    "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS",
-    default=True,
-)
-# https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-preload
-SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
-# https://docs.djangoproject.com/en/dev/ref/middleware/#x-content-type-options-nosniff
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
-    "DJANGO_SECURE_CONTENT_TYPE_NOSNIFF",
-    default=True,
-)
+# # SECURITY
+# # ------------------------------------------------------------------------------
+# # https://docs.djangoproject.com/en/dev/ref/settings/#secure-proxy-ssl-header
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# # https://docs.djangoproject.com/en/dev/ref/settings/#secure-ssl-redirect
+# SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+# # https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-secure
+# SESSION_COOKIE_SECURE = True
+# # https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-name
+# SESSION_COOKIE_NAME = "__Secure-sessionid"
+# # https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-secure
+# CSRF_COOKIE_SECURE = True
+# # https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-name
+# CSRF_COOKIE_NAME = "__Secure-csrftoken"
+# # https://docs.djangoproject.com/en/dev/topics/security/#ssl-https
+# # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-seconds
+# # TODO: set this to 60 seconds first and then to 518400 once you prove the former works
+# SECURE_HSTS_SECONDS = 60
+# # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-include-subdomains
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
+#     "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS",
+#     default=True,
+# )
+# # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-preload
+# SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
+# # https://docs.djangoproject.com/en/dev/ref/middleware/#x-content-type-options-nosniff
+# SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
+#     "DJANGO_SECURE_CONTENT_TYPE_NOSNIFF",
+#     default=True,
+# )
 
 # STATIC & MEDIA
 # ------------------------
@@ -85,7 +87,7 @@ STORAGES = {
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = env(
     "DJANGO_DEFAULT_FROM_EMAIL",
-    default="lsp <noreply@https://scienceplatform.linea.org.br>",
+    default="scienceplatform <noreply@https://scienceplatform.linea.org.br>",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
@@ -178,7 +180,154 @@ LOGGING = {
 # -------------------------------------------------------------------------------
 # Tools that generate code samples can use SERVERS to point to the correct domain
 SPECTACULAR_SETTINGS["SERVERS"] = [
-    {"url": "https://https://scienceplatform.linea.org.br", "description": "Production server"},
+    {"url": "https://scienceplatform.linea.org.br", "description": "Production server"},
 ]
+
+# ------------------------------------------------------------------------------
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# COmanage Autorization
+# ------------------------------------------------------------------------------
+COMANAGE_SERVER_URL = os.environ.get(
+    "COMANAGE_SERVER_URL", "https://register.linea.org.br"
+)
+COMANAGE_USER = os.environ.get("COMANAGE_USER", "co_2.linea.apps")
+COMANAGE_PASSWORD = os.environ.get("COMANAGE_PASSWORD")
+COMANAGE_COID = os.environ.get("COMANAGE_COID")
+
+# Django SAML2
+# ------------------------------------------------------------------------------
+# Declarado no inicio do arquivo.
+# DOMAIN = env("DOMAIN", default="targetviewer.linea.org.br")
+
+CONFIG_DIR = Path(BASE_DIR).joinpath("config")
+
+# FQDN Exemplo:https://targetviewer.linea.org.br
+FQDN = BASE_HOST
+
+CERT_DIR = CONFIG_DIR.joinpath("certificates")
+ATTR_DIR = CONFIG_DIR.joinpath("attribute-maps")
+
+# Including SAML2 Backend Authentication
+# AUTHENTICATION_BACKENDS += ("djangosaml2.backends.Saml2Backend", )
+# Custom Saml2 Backend for LIneA
+AUTHENTICATION_BACKENDS += ("common.saml2.LineaSaml2Backend",)
+# Including SAML2 Middleware
+MIDDLEWARE += ("djangosaml2.middleware.SamlSessionMiddleware",)
+
+# configurações relativas ao session cookie
+SAML_SESSION_COOKIE_NAME = "saml_session"
+SESSION_COOKIE_SECURE = True
+
+# Qualquer view que requer um usuário autenticado deve redirecionar o navegador para esta url
+# LOGIN_URL = "/saml2/login/"
+LOGIN_URL = "/api/api-auth/login"
+# URL_CILOGON example: https://targetviewer.linea.org.br/saml2/login/?idp=https://satosa.linea.org.br/linea/proxy/aHR0cHM6Ly9jaWxvZ29uLm9yZw==
+AUTH_SAML2_LOGIN_URL_CILOGON = env("AUTH_SAML2_LOGIN_URL_CILOGON")
+
+# Encerra a sessão quando o usuário fecha o navegador
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Tipo de binding utilizado
+SAML_DEFAULT_BINDING = saml2.BINDING_HTTP_POST
+SAML_IGNORE_LOGOUT_ERRORS = True
+
+# Cria usuário Django a partir da asserção SAML caso o mesmo não exista
+SAML_CREATE_UNKNOWN_USER = True
+
+# https://djangosaml2.readthedocs.io/contents/security.html#content-security-policy
+SAML_CSP_HANDLER = ""
+
+# URL para redirecionamento após a autenticação
+LOGIN_REDIRECT_URL = "/"
+
+SAML_ATTRIBUTE_MAPPING = {
+    "eduPersonUniqueId": ("username",),
+    "givenName": ("first_name",),
+    "sn": ("last_name",),
+    "email": ("email",),
+}
+
+SAML_CONFIG = {
+    # Biblioteca usada para assinatura e criptografia
+    "xmlsec_binary": "/usr/bin/xmlsec1",
+    "entityid": FQDN + "/saml2/metadata/",
+    # Diretório contendo os esquemas de mapeamento de atributo
+    "attribute_map_dir": str(ATTR_DIR),
+    "description": "SP Target Viewer",
+    "service": {
+        "sp": {
+            "name": "SP Target Viewer",
+            "ui_info": {
+                "display_name": {"text": "SP Target Viewer", "lang": "en"},
+                "description": {"text": "SP Target Viewer", "lang": "en"},
+                "information_url": {"text": FQDN, "lang": "en"},
+                "privacy_statement_url": {"text": FQDN, "lang": "en"},
+            },
+            "name_id_format": [
+                "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+                "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+            ],
+            # Indica os endpoints dos serviços fornecidos
+            "endpoints": {
+                "assertion_consumer_service": [
+                    (FQDN + "/saml2/acs/", saml2.BINDING_HTTP_POST),
+                ],
+                "single_logout_service": [
+                    (FQDN + "/saml2/ls/", saml2.BINDING_HTTP_REDIRECT),
+                    (FQDN + "/saml2/ls/post", saml2.BINDING_HTTP_POST),
+                ],
+            },
+            # Algoritmos utilizados
+            #'signing_algorithm':  saml2.xmldsig.SIG_RSA_SHA256,
+            #'digest_algorithm':  saml2.xmldsig.DIGEST_SHA256,
+            "force_authn": False,
+            "name_id_format_allow_create": False,
+            # Indica que as respostas de autenticação para este SP devem ser assinadas
+            "want_response_signed": True,
+            # Indica se as solicitações de autenticação enviadas por este SP devem ser assinadas
+            "authn_requests_signed": True,
+            # Indica se este SP deseja que o IdP envie as asserções assinadas
+            "want_assertions_signed": False,
+            "only_use_keys_in_metadata": True,
+            "allow_unsolicited": False,
+        },
+    },
+    # Indica onde os metadados podem ser encontrados
+    "metadata": {
+        "remote": [
+            {
+                "url": "https://www.linea.org.br/static/metadata/satosa-prod-frontend-cilogon.xml",
+                "cert": None,
+            },
+        ],
+    },
+    # Configurado como 1 para fornecer informações de debug
+    "debug": 1,
+    # Signature
+    "key_file": str(CERT_DIR.joinpath("mykey.pem")),  # private part
+    "cert_file": str(CERT_DIR.joinpath("mycert.pem")),  # public part
+    # Encriptation
+    "encryption_keypairs": [
+        {
+            "key_file": str(CERT_DIR.joinpath("mykey.pem")),  # private part
+            "cert_file": str(CERT_DIR.joinpath("mycert.pem")),  # public part
+        }
+    ],
+    "contact_person": [
+        {
+            "given_name": "Service",
+            "sur_name": "Desk",
+            "company": "LIneA",
+            "email_address": "helpdesk@linea.org.br",
+            "contact_type": "technical",
+        },
+    ],
+    # Descreve a organização responsável pelo serviço
+    "organization": {
+        "name": [("LIneA", "pt-br")],
+        "display_name": [("LIneA", "pt-br")],
+        "url": [("https://www.linea.org.br", "pt-br")],
+    },
+}
