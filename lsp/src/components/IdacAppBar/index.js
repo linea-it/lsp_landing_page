@@ -14,9 +14,12 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import LoggedUser from '@/components/LoggedUser';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function IdacAppBar(props) {
-
+  const { user, settings } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -104,6 +107,14 @@ export default function IdacAppBar(props) {
             ))}
           </List>
           <Box sx={{ flexGrow: 1 }} />
+          {user && (
+            <LoggedUser username={user?.username} />
+          )}
+          {!user && (
+            <Button href={settings.login_url} color="inherit" sx={{ display: { xs: 'none', md: 'block' } }}>
+              Sign In
+            </Button>
+          )}
           <IconButton
             color="inherit"
             aria-label="open drawer"
