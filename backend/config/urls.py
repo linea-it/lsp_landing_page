@@ -37,7 +37,7 @@ if settings.DEBUG:
 urlpatterns += [
     # API base url
     path("api/", include("config.api_router")),
-    path("api/logout/", CommonViews.teste, name="logout_user"),
+    path("api/logout/", CommonViews.logout_user, name="logout_user"),
     path(
         "api/environment_settings/",
         CommonViews.environment_settings,

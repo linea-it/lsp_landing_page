@@ -180,7 +180,7 @@ LOGGING = {
 # -------------------------------------------------------------------------------
 # Tools that generate code samples can use SERVERS to point to the correct domain
 SPECTACULAR_SETTINGS["SERVERS"] = [
-    {"url": "https://https://scienceplatform.linea.org.br", "description": "Production server"},
+    {"url": "https://scienceplatform.linea.org.br", "description": "Production server"},
 ]
 
 # ------------------------------------------------------------------------------
