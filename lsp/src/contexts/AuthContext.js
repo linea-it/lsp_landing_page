@@ -1,7 +1,7 @@
 'use client'
 import { createContext, useEffect, useState, useContext } from 'react'
-import { setCookie, parseCookies, destroyCookie } from 'nookies'
-import { getLoggedUser, LogoutUser } from '@/services/User'
+import { parseCookies, destroyCookie } from 'nookies'
+import { getLoggedUser, logoutUser } from '@/services/User'
 // import { useRouter } from 'next/navigation'
 import { api, getEnvironmentSettings } from '@/services/API';
 export const AuthContext = createContext({})
@@ -47,7 +47,7 @@ export function AuthProvider({ children }) {
   function logout() {
     const { 'lsp.csrftoken': csrftoken } = parseCookies()
     if (csrftoken) {
-      LogoutUser()
+      logoutUser()
         .then(res => {
           console.log('Backend Logout Success')
         })

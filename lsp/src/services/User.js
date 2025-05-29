@@ -4,6 +4,6 @@ export const getLoggedUser = () => {
   return api.get("users/me/");
 }
 
-export const LogoutUser = () => {
+export const logoutUser = () => {
   return api.get("logout/");
 }

@@ -4,7 +4,7 @@ import axios from 'axios'
 // REFRESH TOKEN
 // DAR UMA OLHADA NESTE PACOTE: https://github.com/Flyrell/axios-auth-refresh
 // Outro Exemplo de Refresh Token Usando Hook: https://dev.to/arianhamdi/react-hooks-in-axios-interceptors-3e1h
-axios.defaults.xsrfCookieName = 'target.csrftoken';
+axios.defaults.xsrfCookieName = 'lsp.csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 axios.defaults.withCredentials = true;
 axios.defaults.withXSRFToken = true;
