@@ -28,10 +28,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version-file: '.python-version'
+          python-version-file: 'backend/.python-version'
       # Consider using pre-commit.ci for open source project
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
+        with:
+          working_directory: backend
 
   # With no caching at all the entire ci process takes 3m to complete!
   pytest:
@@ -50,10 +52,10 @@ jobs:
           push: false
           load: true
           files: docker-compose.local.yml
-          targets: django
+          targets: backend
           set: |
-            django.cache-from=type=gha,scope=django-cached-tests
-            django.cache-to=type=gha,scope=django-cached-tests,mode=max
+            backend.cache-from=type=gha,scope=backend-cached-tests
+            backend.cache-to=type=gha,scope=backend-cached-tests,mode=max
             postgres.cache-from=type=gha,scope=postgres-cached-tests
             postgres.cache-to=type=gha,scope=postgres-cached-tests,mode=max
 
@@ -68,13 +70,13 @@ jobs:
             docs.cache-to=type=gha,scope=cached-docs,mode=max
 
       - name: Check DB Migrations
-        run: docker compose -f docker-compose.local.yml run --rm django python manage.py makemigrations --check
+        run: docker compose -f docker-compose.local.yml run --rm backend python manage.py makemigrations --check
 
       - name: Run DB Migrations
-        run: docker compose -f docker-compose.local.yml run --rm django python manage.py migrate
+        run: docker compose -f docker-compose.local.yml run --rm backend python manage.py migrate
 
       - name: Run Django Tests
-        run: docker compose -f docker-compose.local.yml run django pytest
+        run: docker compose -f docker-compose.local.yml run backend pytest
 
       - name: Tear down the Stack
         run: docker compose -f docker-compose.local.yml down
