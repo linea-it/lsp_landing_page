@@ -46,11 +46,6 @@ export default function LspAppBar(props) {
       target: '_blank',
     },
     {
-      description: 'Monitoring',
-      href: 'https://www.linea.org.br/grafana/',
-      target: '_blank',
-    },
-    {
       description: 'Contact',
       href: '/lsp/contact',
       target: '_blank',

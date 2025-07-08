@@ -45,11 +45,6 @@ export default function IdacAppBar(props) {
       target: '_blank'
     },
     {
-      description: 'Monitoring',
-      href: 'https://www.linea.org.br/grafana/',
-      target: '_blank'
-    },
-    {
       description: 'Contact',
       href: '/idac/contact',
       target: '_blank'
