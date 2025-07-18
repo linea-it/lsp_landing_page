@@ -13,7 +13,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/jupyerhub_logo_200x200.png',
       imageAlt: 'JupyterHub logo',
       href: 'https://jupyter.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: true
     },
     {
       title: 'Open OnDemand',
@@ -21,7 +22,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/open_ondemand_logo_200x200.png',
       imageAlt: 'Open OnDemand logo',
       href: 'https://ondemand.linea.org.br/',
-      isPrivate: false
+      membersOnly: true,
+      registrationRequired: false
     },
     {
       title: 'User Query',
@@ -29,7 +31,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/userquery_logo_200x200.png',
       imageAlt: 'daiquiri logo',
       href: settings?.is_dev ? 'https://userquery-dev.linea.org.br/query/' : 'https://userquery.linea.org.br/query/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
       title: 'Target Viewer',
@@ -37,7 +40,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/target_viewer_logo_200x200.png',
       imageAlt: 'target viewer logo',
       href: settings?.is_dev ? 'https://targetviewer-dev.linea.org.br/' : 'https://targetviewer.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: true
     },
     {
       title: 'Sky Viewer',
@@ -45,7 +49,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/skyviewer_logo_200x200.png',
       imageAlt: 'aladin logo',
       href: settings?.is_dev ? 'https://skyviewer-dev.linea.org.br/' : 'https://skyviewer.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
       title: 'PZ Server',
@@ -53,7 +58,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/pzserver_logo_200x200.png',
       imageAlt: 'pz server logo',
       href: settings?.is_dev ? 'https://pzserver-dev.linea.org.br/' : 'https://pzserver.linea.org.br/',
-      isPrivate: true
+      membersOnly: true,
+      registrationRequired: false
     },
     {
       title: 'LIneA Occultation Prediction Database',
@@ -61,7 +67,8 @@ export default function IdacTools() {
       imageSrc: 'idac_tools_logos/occultation_database_logo_200x200.png',
       imageAlt: 'occultation predict database logo',
       href: settings?.is_dev ? 'https://solarsystem-dev.linea.org.br/' : 'https://solarsystem.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
   ]
 
@@ -83,7 +90,8 @@ export default function IdacTools() {
             imageSrc={tool.imageSrc}
             imageAlt={tool.image}
             href={tool.href}
-            isPrivate={tool.isPrivate}
+            membersOnly={tool.membersOnly}
+            registrationRequired={tool.registrationRequired}
           />
         </Grid>
       ))}
