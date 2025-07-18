@@ -14,7 +14,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/jupyerhub_logo_200x200.png',
       imageAlt: 'JupyterHub logo',
       href: 'https://jupyter.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: true
     },
     {
       title: 'OnDemand',
@@ -22,7 +23,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/open_ondemand_logo_200x200.png',
       imageAlt: 'Open OnDemand logo',
       href: 'https://ondemand.linea.org.br/',
-      isPrivate: true
+      membersOnly: true,
+      registrationRequired: false
     },
     {
       title: 'User Query',
@@ -30,7 +32,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/userquery_logo_200x200.png',
       imageAlt: 'daiquiri logo',
       href: settings?.is_dev ? 'https://userquery-dev.linea.org.br/query/' : 'https://userquery.linea.org.br/query/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
       title: 'Target Viewer',
@@ -38,7 +41,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/target_viewer_logo_200x200.png',
       imageAlt: 'target viewer logo',
       href: settings?.is_dev ? 'https://targetviewer-dev.linea.org.br/' : 'https://targetviewer.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: true
     },
     {
       title: 'Sky Viewer',
@@ -46,7 +50,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/skyviewer_logo_200x200.png',
       imageAlt: 'aladin logo',
       href: settings?.is_dev ? 'https://skyviewer-dev.linea.org.br/' : 'https://skyviewer.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
       title: 'PZ Server',
@@ -54,7 +59,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/pzserver_logo_200x200.png',
       imageAlt: 'pz server logo',
       href: settings?.is_dev ? 'https://pzserver-dev.linea.org.br/' : 'https://pzserver.linea.org.br/',
-      isPrivate: true
+      membersOnly: true,
+      registrationRequired: false
     },
     {
       title: 'LIneA Occultation Prediction Database',
@@ -62,7 +68,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/occultation_database_logo_200x200.png',
       imageAlt: 'occultation predict database logo',
       href: settings?.is_dev ? 'https://solarsystem-dev.linea.org.br/' : 'https://solarsystem.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
       title: 'DES Science Server',
@@ -70,7 +77,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/des_science_server_logo_200x200.png',
       imageAlt: 'des science server logo',
       href: settings?.is_dev ? 'https://scienceserver-dev.linea.org.br/' : 'https://scienceserver.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: true
     },
     {
       title: 'SDSS Sky Server',
@@ -78,7 +86,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/sdss_sky_server_logo_200x200.png',
       imageAlt: 'sdss sky server logo',
       href: 'http://skyserver.linea.org.br/sciserver/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
       title: 'DES Science Portal',
@@ -86,7 +95,8 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/des_science_portal_logo_200x200.png',
       imageAlt: 'des science server logo',
       href: 'https://scienceportal.linea.org.br/',
-      isPrivate: true
+      membersOnly: true,
+      registrationRequired: false
     },
     {
       title: 'MaNGA Portal',
@@ -94,15 +104,17 @@ export default function LspTools() {
       imageSrc: 'lsp_tools_logos/manga_portal_logo_black_200x200.png',
       imageAlt: 'sdss sky server logo',
       href: 'https://manga.linea.org.br/',
-      isPrivate: false
+      membersOnly: false,
+      registrationRequired: false
     },
     {
-      title: 'Solar System Portal',
-      description: '',
+      title: 'LIneA Solar System Portal',
+      description: 'High-performance computing platform for large-scale data processing and analysis of Solar System objects, powering services like the LIneA Occultation Prediction Database.',
       imageSrc: 'lsp_tools_logos/solar_system_logo_200x200.png',
       imageAlt: 'solar system portal logo',
       href: settings?.is_dev ? 'https://solarsystem-dev.linea.org.br/dashboard' : 'https://solarsystem.linea.org.br/dashboard',
-      isPrivate: false
+      membersOnly: true,
+      registrationRequired: false
     }
   ]
 
@@ -124,7 +136,8 @@ export default function LspTools() {
             imageSrc={tool.imageSrc}
             imageAlt={tool.image}
             href={tool.href}
-            isPrivate={tool.isPrivate}
+            membersOnly={tool.membersOnly}
+            registrationRequired={tool.registrationRequired}
           />
         </Grid>
       ))}

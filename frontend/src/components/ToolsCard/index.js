@@ -11,7 +11,7 @@ import Link from '@mui/material/Link';
 import LockIcon from '@mui/icons-material/Lock';
 import PropTypes from 'prop-types'
 
-export default function ToolsCard({ imageSrc, imageAlt, title, description, href, isPrivate }) {
+export default function ToolsCard({ imageSrc, imageAlt, title, description, href, membersOnly, registrationRequired }) {
 
   return (
     // Utilizei CardActionArea para ter o efeito de over e click no card inteiro
@@ -49,7 +49,7 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
               <Typography variant="body2" color="text.secondary">
                 {description}
               </Typography>
-              {isPrivate && (
+              {membersOnly && (
                 <Chip
                   label="Members only"
                   size="small"
@@ -60,6 +60,18 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
                     mt: 2,
                   }}
                 />)}
+              {registrationRequired && (
+                <Chip
+                  label="Registration required"
+                  size="small"
+                  variant="outlined"
+                  color="info"
+                  icon={<LockIcon />}
+                  sx={{
+                    mt: 2,
+                  }}
+                />
+              )}
             </CardContent>
           </Box>
         </Card>
@@ -71,7 +83,8 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
 ToolsCard.defaultProps = {
   imageSrc: 'placeholder_200x200.png',
   imageAlt: 'placeholder logo 200x200',
-  isPrivate: false
+  membersOnly: false,
+  registrationRequired: false
 }
 ToolsCard.propTypes = {
   title: PropTypes.string.isRequired,
@@ -79,5 +92,6 @@ ToolsCard.propTypes = {
   href: PropTypes.string.isRequired,
   imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
-  isPrivate: PropTypes.bool
+  membersOnly: PropTypes.bool,
+  registrationRequired: PropTypes.bool
 }
