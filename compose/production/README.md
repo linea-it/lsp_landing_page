@@ -7,20 +7,20 @@ Steps Considering
 ```bash
 Host: srvnode01
 User: app.deployer
-application port: 8087 
-application folder: /apps/skyviewer.
+application port: 8190 
+application folder: /apps/scienceplatform.
 ```
 Copy files and create directories
 
 ```bash
-mkdir -p skyviewer skyviewer/logs skyviewer/data/redis skyviewer/data/tmp skyviewer/certificates \
-&& chmod -R g+w skyviewer/logs skyviewer/data \
-&& git clone https://github.com/linea-it/sky-viewer.git skyviewer_temp \
-&& cp skyviewer_temp/compose/production/docker-compose.production.yml skyviewer/docker-compose.yml \ 
-&& cp skyviewer_temp/compose/production/env_template skyviewer/.env \ 
-&& cp skyviewer_temp/compose/production/nginx-proxy.conf skyviewer/nginx-proxy.conf
-&& rm -rf skyviewer_temp \
-&& cd skyviewer \
+mkdir -p scienceplatform scienceplatform/logs scienceplatform/data/redis scienceplatform/data/tmp scienceplatform/certificates \
+&& chmod -R g+w scienceplatform/logs scienceplatform/data \
+&& git clone https://github.com/linea-it/sky-viewer.git scienceplatform_temp \
+&& cp scienceplatform_temp/compose/production/docker-compose.production.yml scienceplatform/docker-compose.yml \ 
+&& cp scienceplatform_temp/compose/production/env_template scienceplatform/.env \ 
+&& cp scienceplatform_temp/compose/production/nginx-proxy.conf scienceplatform/nginx-proxy.conf
+&& rm -rf scienceplatform_temp \
+&& cd scienceplatform \
 && docker compose pull frontend \
 && docker compose up -d
 ```
