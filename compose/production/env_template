@@ -1,0 +1,39 @@
+# Docker image tag
+IMAGE_TAG=latest
+
+# General
+# ------------------------------------------------------------------------------
+DJANGO_DEBUG=False
+DJANGO_SETTINGS_MODULE=config.settings.production
+DJANGO_SECRET_KEY=dfghjdsajndqwhujJHIDASjdaspJKDSAaASAlidmsao
+DJANGO_ALLOWED_HOSTS=scienceplatform.linea.org.br
+DJANGO_UWSGI_WORKER_PROCESSES=4
+DJANGO_UWSGI_WORKER_THREADS=2
+# Databases
+DATABASE_URL=postgres://<POSTGRES_USER>:<POSTGRES_PASSWORD>@<POSTGRES_HOST>:<POSTGRES_PORT>/<POSTGRES_DB>
+
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+
+# Celery
+# ------------------------------------------------------------------------------
+CELERY_BROKER_URL=$REDIS_URL
+
+# Celery /Flower
+# ------------------------------------------------------------------------------
+CELERY_FLOWER_USER=scienceplatform
+CELERY_FLOWER_PASSWORD=<CELERY_FLOWER_PASSWORD>
+
+# ------------------------------------------------------------------------------
+# LIneA
+# ------------------------------------------------------------------------------
+BASE_HOST=https://scienceplatform.linea.org.br
+ENVIRONMENT_NAME=production
+
+#SAML2
+# ------------------------------------------------------------------------------
+AUTH_SAML2_LOGIN_URL_CILOGON=$BASE_HOST/saml2/login/?idp=https://satosa.linea.org.br/linea/proxy/aHR0cHM6Ly9jaWxvZ29uLm9yZw==
+
+# Url de login utilizada pelo frontend
+LINEA_LOGIN_URL=$AUTH_SAML2_LOGIN_URL_CILOGON

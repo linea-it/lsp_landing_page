@@ -1,4 +1,8 @@
+# LIneA Science Platform (LSP Langing Page)
 
+
+## Setup Production Environment
+https://github.com/linea-it/lsp_landing_page/blob/main/compose/production/README.md
 
 ## Build docker images manualy
 
@@ -11,8 +15,6 @@ docker build -f compose/production/frontend/Dockerfile -t linea/lsp_landing_page
 ```bash
 docker build -f compose/production/django/Dockerfile -t linea/lsp_landing_page:backend_$(git describe --always) .
 ```
-
-
 
 Push image to docker hub:
 
@@ -38,22 +40,3 @@ mkdir scienceplatform-dev \
 ```
 
 Test in https://scienceplatform-dev.linea.org.br
-
-
-## Deploy Production environment
-
-Clone the repository to temp folder, copy docker-compose.production.yml to application folder, remove temp folder, edit compose file change image tag and mapping port if necessary. 
-
-Steps Considering srvnode04 as host, application port as 8190 and application folder as scienceplatform.
-
-```bash
-mkdir scienceplatform \
-&& git clone https://github.com/linea-it/lsp_landing_page.git lsp_temp \
-&& cp lsp_temp/docker-compose.production.yml scienceplatform/docker-compose.yml \ 
-&& rm -rf lsp_temp \
-&& cd scienceplatform \
-&& docker compose pull frontend \
-&& docker compose up -d
-```
-
-Test in https://scienceplatform.linea.org.br
