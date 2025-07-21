@@ -15,14 +15,13 @@ Copy files and create directories
 ```bash
 mkdir -p scienceplatform scienceplatform/logs scienceplatform/data/redis scienceplatform/data/tmp scienceplatform/certificates \
 && chmod -R g+w scienceplatform/logs scienceplatform/data \
-&& git clone https://github.com/linea-it/sky-viewer.git scienceplatform_temp \
+&& git clone https://github.com/linea-it/lsp_landing_page.git scienceplatform_temp \
 && cp scienceplatform_temp/compose/production/docker-compose.production.yml scienceplatform/docker-compose.yml \ 
 && cp scienceplatform_temp/compose/production/env_template scienceplatform/.env \ 
 && cp scienceplatform_temp/compose/production/nginx-proxy.conf scienceplatform/nginx-proxy.conf
 && rm -rf scienceplatform_temp \
 && cd scienceplatform \
-&& docker compose pull frontend \
-&& docker compose up -d
+&& docker compose pull
 ```
 
 Generate SAML2 Certificates
@@ -34,8 +33,8 @@ cd certificates \
 && openssl x509 -req -days 365 -in mycert.csr -signkey mykey.key -out mycert.crt \
 && cp mykey.key mykey.pem \
 && cp mycert.crt mycert.pem \
-&& cd ..
-&& chmod -R go+r certificates \
+&& cd .. \
+&& chmod -R go+r certificates
 ```
 
 Edit .env for secrets, users and passwords.
@@ -61,6 +60,3 @@ Restart all Services
 ```bash
 docker compose down && docker compose up -d
 ```
-
-
-

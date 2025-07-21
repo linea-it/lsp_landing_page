@@ -1,17 +1,30 @@
 # Docker image tag
 IMAGE_TAG=latest
+
 WEB_PORT=8190
+
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=<POSTGRES_HOST>
+POSTGRES_PORT=5432
+POSTGRES_DB=scienceplatformdb
+POSTGRES_USER=<POSTGRES_USER>
+POSTGRES_PASSWORD=<POSTGRES_PASSWORD>
+
+
 
 # General
 # ------------------------------------------------------------------------------
 DJANGO_DEBUG=False
+DJANGO_LOG_LEVEL=INFO
 DJANGO_SETTINGS_MODULE=config.settings.production
 DJANGO_SECRET_KEY=dfghjdsajndqwhujJHIDASjdaspJKDSAaASAlidmsao
 DJANGO_ALLOWED_HOSTS=scienceplatform.linea.org.br
 DJANGO_UWSGI_WORKER_PROCESSES=4
 DJANGO_UWSGI_WORKER_THREADS=2
+
 # Databases
-DATABASE_URL=postgres://<POSTGRES_USER>:<POSTGRES_PASSWORD>@<POSTGRES_HOST>:<POSTGRES_PORT>/<POSTGRES_DB>
+DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB
 
 # Redis
 # ------------------------------------------------------------------------------

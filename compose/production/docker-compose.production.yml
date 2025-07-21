@@ -1,12 +1,14 @@
 services:
   backend: &django
     image: linea/lsp_landing_page:backend_${IMAGE_TAG:-latest}
+    group_add:
+      - "10000"
+      - "10006"    
     volumes:
       - ./data/tmp:/data
-      - .logs:/logs
+      - ./logs:/logs
       - ./certificates:/app/config/certificates
     depends_on:
-      - postgres
       - redis
     env_file:
       - .env
@@ -16,13 +18,6 @@ services:
     image: linea/lsp_landing_page:frontend_${IMAGE_TAG:-latest}
     depends_on:
       - backend
-
-  postgres:
-    image: docker.io/postgres:14
-    volumes:
-      - ./data/pg_data:/var/lib/postgresql/data
-    env_file:
-      - .env
 
   redis:
     image: docker.io/redis:6

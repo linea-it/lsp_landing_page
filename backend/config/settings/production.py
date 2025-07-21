@@ -150,28 +150,47 @@ LOGGING = {
         },
     },
     "handlers": {
-        "mail_admins": {
-            "level": "ERROR",
-            "filters": ["require_debug_false"],
-            "class": "django.utils.log.AdminEmailHandler",
-        },
         "console": {
-            "level": "DEBUG",
+            "level": LOG_LEVEL,
             "class": "logging.StreamHandler",
             "formatter": "verbose",
         },
+        "default": {
+            "level": LOG_LEVEL,
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(LOG_DIR, "django.log"),
+            "formatter": "verbose",
+        },
+        "djangosaml2": {
+            "level": LOG_LEVEL,
+            "class": "logging.handlers.RotatingFileHandler",
+            "maxBytes": 1024 * 1024 * 5,  # 5 MB
+            "backupCount": 5,
+            "filename": os.path.join(LOG_DIR, "djangosaml2.log"),
+            "formatter": "verbose",
+        },   
     },
     "root": {"level": "INFO", "handlers": ["console"]},
     "loggers": {
-        "django.request": {
-            "handlers": ["mail_admins"],
+        "django": {
+            "level": LOG_LEVEL, 
+            "handlers": ["default", "console"], 
+            "propagate": True
+        },
+        "django.db.backends": {
             "level": "ERROR",
-            "propagate": True,
+            "handlers": ["console"],
+            "propagate": False,
         },
         "django.security.DisallowedHost": {
             "level": "ERROR",
             "handlers": ["console", "mail_admins"],
             "propagate": True,
+        },
+                "djangosaml2": {
+            "level": LOG_LEVEL, 
+            "handlers": ["djangosaml2"], 
+            "propagate": True
         },
     },
 }
