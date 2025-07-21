@@ -34,7 +34,7 @@ services:
     ports:
       - 8189:80
     volumes:
-      # Arquivo de configuração do Nginx para este ambiente
+      # Arquivo de configuração do Ngnix para este amente
       - ./nginx-proxy.conf:/etc/nginx/conf.d/default.conf:ro
       # Diretório onde o backend manipula arquivos, e que deve ficar acessivel ao servidor web
       - ./data/tmp:/var/www/data
