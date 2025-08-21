@@ -23,9 +23,15 @@ urlpatterns = [
     # User management
     # path("users/", include("lsp.users.urls", namespace="users")),
     # path("accounts/", include("allauth.urls")),
+    
     # Your stuff: custom urls includes go here
     # Auth SAML2
     path("saml2/", include("djangosaml2.urls")),
+    path(
+        "api/login/",
+        TemplateView.as_view(template_name="pages/linea_login.html"),
+        name="login",
+    ),
     # Media files
     *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
