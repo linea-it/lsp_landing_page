@@ -184,10 +184,10 @@ LOGGING = {
         },
         "django.security.DisallowedHost": {
             "level": "ERROR",
-            "handlers": ["console", "mail_admins"],
+            "handlers": ["console"],
             "propagate": True,
         },
-                "djangosaml2": {
+        "djangosaml2": {
             "level": LOG_LEVEL, 
             "handlers": ["djangosaml2"], 
             "propagate": True
@@ -206,14 +206,21 @@ SPECTACULAR_SETTINGS["SERVERS"] = [
 # Your stuff...
 # ------------------------------------------------------------------------------
 
-# COmanage Autorization
-# ------------------------------------------------------------------------------
-COMANAGE_SERVER_URL = os.environ.get(
-    "COMANAGE_SERVER_URL", "https://register.linea.org.br"
-)
-COMANAGE_USER = os.environ.get("COMANAGE_USER", "co_2.linea.apps")
-COMANAGE_PASSWORD = os.environ.get("COMANAGE_PASSWORD")
-COMANAGE_COID = os.environ.get("COMANAGE_COID")
+# Qualquer view que requer um usuário autenticado deve redirecionar o navegador para esta url
+LOGIN_URL = "/api/login"
+# Urls for login with SAML2/CILogon
+# URL_CILOGON example: https://skyviewer.linea.org.br/saml2/login/?idp=https://satosa.linea.org.br/linea/proxy/aHR0cHM6Ly9jaWxvZ29uLm9yZw==
+LINEA_LOGIN_URL = env("LINEA_LOGIN_URL")
+RUBIN_LOGIN_URL = env("RUBIN_LOGIN_URL")
+
+# # COmanage Autorization
+# # ------------------------------------------------------------------------------
+# COMANAGE_SERVER_URL = os.environ.get(
+#     "COMANAGE_SERVER_URL", "https://register.linea.org.br"
+# )
+# COMANAGE_USER = os.environ.get("COMANAGE_USER", "co_2.linea.apps")
+# COMANAGE_PASSWORD = os.environ.get("COMANAGE_PASSWORD")
+# COMANAGE_COID = os.environ.get("COMANAGE_COID")
 
 # Django SAML2
 # ------------------------------------------------------------------------------
@@ -234,19 +241,15 @@ ATTR_DIR = CONFIG_DIR.joinpath("attribute-maps")
 AUTHENTICATION_BACKENDS += ("common.saml2.LineaSaml2Backend",)
 # Including SAML2 Middleware
 MIDDLEWARE += ("djangosaml2.middleware.SamlSessionMiddleware",)
-
+# SAML2 Custom error handler
+# https://djangosaml2.readthedocs.io/contents/developer.html#custom-error-handler
+SAML_ACS_FAILURE_RESPONSE_FUNCTION = 'common.views.saml2_template_failure'
 # configurações relativas ao session cookie
 SAML_SESSION_COOKIE_NAME = "saml_session"
 SESSION_COOKIE_SECURE = True
 
-# Qualquer view que requer um usuário autenticado deve redirecionar o navegador para esta url
-# LOGIN_URL = "/saml2/login/"
-LOGIN_URL = "/api/api-auth/login"
-# URL_CILOGON example: https://targetviewer.linea.org.br/saml2/login/?idp=https://satosa.linea.org.br/linea/proxy/aHR0cHM6Ly9jaWxvZ29uLm9yZw==
-AUTH_SAML2_LOGIN_URL_CILOGON = env("AUTH_SAML2_LOGIN_URL_CILOGON")
-
 # Encerra a sessão quando o usuário fecha o navegador
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 # Tipo de binding utilizado
 SAML_DEFAULT_BINDING = saml2.BINDING_HTTP_POST
@@ -266,6 +269,7 @@ SAML_ATTRIBUTE_MAPPING = {
     "givenName": ("first_name",),
     "sn": ("last_name",),
     "email": ("email",),
+    "isMemberOf": ("name",),
 }
 
 SAML_CONFIG = {
@@ -318,6 +322,18 @@ SAML_CONFIG = {
         "remote": [
             {
                 "url": "https://www.linea.org.br/static/metadata/satosa-prod-frontend-cilogon.xml",
+                "cert": None,
+            },
+            {
+                "url": "https://www.linea.org.br/static/metadata/satosa-prod-frontend-rubin.xml",
+                "cert": None,
+            },
+            {
+                "url": "https://www.linea.org.br/static/metadata/satosa-dev-frontend-cilogon.xml",
+                "cert": None,
+            },
+            {
+                "url": "https://www.linea.org.br/static/metadata/satosa-dev-frontend-rubin.xml",
                 "cert": None,
             },
         ],

@@ -3,7 +3,8 @@ services:
     image: linea/lsp_landing_page:backend_${IMAGE_TAG:-latest}
     group_add:
       - "10000"
-      - "10006"    
+      - "39215"
+      - "10006"
     volumes:
       - ./data/tmp:/data
       - ./logs:/logs
