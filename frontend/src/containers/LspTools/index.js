@@ -15,7 +15,8 @@ export default function LspTools() {
       imageAlt: 'JupyterHub logo',
       href: 'https://jupyter.linea.org.br/',
       membersOnly: false,
-      registrationRequired: true
+      registrationRequired: true,
+      newRelease: false
     },
     {
       title: 'OnDemand',
@@ -24,7 +25,8 @@ export default function LspTools() {
       imageAlt: 'Open OnDemand logo',
       href: 'https://ondemand.linea.org.br/',
       membersOnly: true,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'User Query',
@@ -33,7 +35,8 @@ export default function LspTools() {
       imageAlt: 'daiquiri logo',
       href: settings?.is_dev ? 'https://userquery-dev.linea.org.br/query/' : 'https://userquery.linea.org.br/query/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'Target Viewer',
@@ -42,7 +45,8 @@ export default function LspTools() {
       imageAlt: 'target viewer logo',
       href: settings?.is_dev ? 'https://targetviewer-dev.linea.org.br/' : 'https://targetviewer.linea.org.br/',
       membersOnly: false,
-      registrationRequired: true
+      registrationRequired: true,
+      newRelease: true
     },
     {
       title: 'Sky Viewer',
@@ -51,7 +55,8 @@ export default function LspTools() {
       imageAlt: 'aladin logo',
       href: settings?.is_dev ? 'https://skyviewer-dev.linea.org.br/' : 'https://skyviewer.linea.org.br/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: true
     },
     {
       title: 'PZ Server',
@@ -60,7 +65,8 @@ export default function LspTools() {
       imageAlt: 'pz server logo',
       href: settings?.is_dev ? 'https://pzserver-dev.linea.org.br/' : 'https://pzserver.linea.org.br/',
       membersOnly: true,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'LIneA Occultation Prediction Database',
@@ -69,7 +75,8 @@ export default function LspTools() {
       imageAlt: 'occultation predict database logo',
       href: settings?.is_dev ? 'https://solarsystem-dev.linea.org.br/' : 'https://solarsystem.linea.org.br/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'DES Science Server',
@@ -78,7 +85,8 @@ export default function LspTools() {
       imageAlt: 'des science server logo',
       href: settings?.is_dev ? 'https://scienceserver-dev.linea.org.br/' : 'https://scienceserver.linea.org.br/',
       membersOnly: false,
-      registrationRequired: true
+      registrationRequired: true,
+      newRelease: false
     },
     {
       title: 'SDSS Sky Server',
@@ -87,7 +95,8 @@ export default function LspTools() {
       imageAlt: 'sdss sky server logo',
       href: 'http://skyserver.linea.org.br/sciserver/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'DES Science Portal',
@@ -96,7 +105,8 @@ export default function LspTools() {
       imageAlt: 'des science server logo',
       href: 'https://scienceportal.linea.org.br/',
       membersOnly: true,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'MaNGA Portal',
@@ -105,7 +115,8 @@ export default function LspTools() {
       imageAlt: 'sdss sky server logo',
       href: 'https://manga.linea.org.br/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'LIneA Solar System Portal',
@@ -114,7 +125,8 @@ export default function LspTools() {
       imageAlt: 'solar system portal logo',
       href: settings?.is_dev ? 'https://solarsystem-dev.linea.org.br/dashboard' : 'https://solarsystem.linea.org.br/dashboard',
       membersOnly: true,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     }
   ]
 
@@ -138,6 +150,7 @@ export default function LspTools() {
             href={tool.href}
             membersOnly={tool.membersOnly}
             registrationRequired={tool.registrationRequired}
+            newRelease={tool.newRelease}
           />
         </Grid>
       ))}

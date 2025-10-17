@@ -14,7 +14,8 @@ export default function IdacTools() {
       imageAlt: 'JupyterHub logo',
       href: 'https://jupyter.linea.org.br/',
       membersOnly: false,
-      registrationRequired: true
+      registrationRequired: true,
+      newRelease: false
     },
     {
       title: 'Open OnDemand',
@@ -23,7 +24,8 @@ export default function IdacTools() {
       imageAlt: 'Open OnDemand logo',
       href: 'https://ondemand.linea.org.br/',
       membersOnly: true,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'User Query',
@@ -32,7 +34,8 @@ export default function IdacTools() {
       imageAlt: 'daiquiri logo',
       href: settings?.is_dev ? 'https://userquery-dev.linea.org.br/query/' : 'https://userquery.linea.org.br/query/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'Target Viewer',
@@ -41,7 +44,8 @@ export default function IdacTools() {
       imageAlt: 'target viewer logo',
       href: settings?.is_dev ? 'https://targetviewer-dev.linea.org.br/' : 'https://targetviewer.linea.org.br/',
       membersOnly: false,
-      registrationRequired: true
+      registrationRequired: true,
+      newRelease: true
     },
     {
       title: 'Sky Viewer',
@@ -50,7 +54,8 @@ export default function IdacTools() {
       imageAlt: 'aladin logo',
       href: settings?.is_dev ? 'https://skyviewer-dev.linea.org.br/' : 'https://skyviewer.linea.org.br/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: true
     },
     {
       title: 'PZ Server',
@@ -59,7 +64,8 @@ export default function IdacTools() {
       imageAlt: 'pz server logo',
       href: settings?.is_dev ? 'https://pzserver-dev.linea.org.br/' : 'https://pzserver.linea.org.br/',
       membersOnly: true,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
     {
       title: 'LIneA Occultation Prediction Database',
@@ -68,7 +74,8 @@ export default function IdacTools() {
       imageAlt: 'occultation predict database logo',
       href: settings?.is_dev ? 'https://solarsystem-dev.linea.org.br/' : 'https://solarsystem.linea.org.br/',
       membersOnly: false,
-      registrationRequired: false
+      registrationRequired: false,
+      newRelease: false
     },
   ]
 
@@ -92,6 +99,7 @@ export default function IdacTools() {
             href={tool.href}
             membersOnly={tool.membersOnly}
             registrationRequired={tool.registrationRequired}
+            newRelease={tool.newRelease}
           />
         </Grid>
       ))}

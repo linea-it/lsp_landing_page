@@ -11,7 +11,7 @@ import Link from '@mui/material/Link';
 import LockIcon from '@mui/icons-material/Lock';
 import PropTypes from 'prop-types'
 
-export default function ToolsCard({ imageSrc, imageAlt, title, description, href, membersOnly, registrationRequired }) {
+export default function ToolsCard({ imageSrc, imageAlt, title, description, href, membersOnly, registrationRequired, newRelease }) {
 
   return (
     // Utilizei CardActionArea para ter o efeito de over e click no card inteiro
@@ -69,6 +69,18 @@ export default function ToolsCard({ imageSrc, imageAlt, title, description, href
                   icon={<LockIcon />}
                   sx={{
                     mt: 2,
+                  }}
+                />
+              )}
+              {newRelease && (
+                <Chip
+                  label="New Release"
+                  size="small"
+                  variant="outlined"
+                  color="success"
+                  sx={{
+                    mt: 2,
+                    mr: 1,
                   }}
                 />
               )}
