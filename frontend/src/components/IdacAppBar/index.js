@@ -40,11 +40,6 @@ export default function IdacAppBar(props) {
       target: '_blank'
     },
     {
-      description: 'Documentation',
-      href: 'https://docs.linea.org.br/',
-      target: '_blank'
-    },
-    {
       description: 'Contact',
       href: '/idac/contact',
       target: '_blank'
@@ -102,6 +97,12 @@ export default function IdacAppBar(props) {
             ))}
           </List>
           <Box sx={{ flexGrow: 1 }} />
+          <Button href="https://data.linea.org.br/" color="inherit" variant="outlined" sx={{ mr: 2 }} size="small">
+            Data
+          </Button>
+          <Button href="https://docs.linea.org.br/" color="inherit" variant="outlined" size="small" sx={{ mr: 4 }}>
+            Docs
+          </Button>
           {user && (
             <LoggedUser username={user?.username} />
           )}

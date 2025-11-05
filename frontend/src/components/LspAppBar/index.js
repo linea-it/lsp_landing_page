@@ -41,11 +41,6 @@ export default function LspAppBar(props) {
       target: '_blank',
     },
     {
-      description: 'Documentation',
-      href: 'https://docs.linea.org.br/',
-      target: '_blank',
-    },
-    {
       description: 'Contact',
       href: '/lsp/contact',
       target: '_blank',
@@ -54,7 +49,7 @@ export default function LspAppBar(props) {
       description: 'IDAC',
       href: '/idac',
       target: '_blank',
-    }
+    },
   ]
 
   const drawer = (
@@ -98,6 +93,14 @@ export default function LspAppBar(props) {
             ))}
           </List>
           <Box sx={{ flexGrow: 1 }} />
+
+          <Button href="https://data.linea.org.br/" color="inherit" variant="outlined" sx={{ mr: 2 }} size="small">
+            Data
+          </Button>
+          <Button href="https://docs.linea.org.br/" color="inherit" variant="outlined" size="small" sx={{ mr: 4 }}>
+            Docs
+          </Button>
+
           {user && (
             <LoggedUser username={user?.username} />
           )}
