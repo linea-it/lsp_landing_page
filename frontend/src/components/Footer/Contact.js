@@ -32,6 +32,7 @@ export default function FooterContact() {
       </Typography>
       <Typography
         variant="body1"
+        ml={2}
       >
         tel:{' '}
         <Link

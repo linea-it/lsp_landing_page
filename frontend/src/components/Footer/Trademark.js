@@ -3,7 +3,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
 
 export default function FooterTrademark() {
-
+  const currentYear = new Date().getFullYear();
   return (
     <Box sx={{ mb: 8 }}>
       <Typography
@@ -14,7 +14,7 @@ export default function FooterTrademark() {
           fontSize: '0.875rem'
         }}
       >
-        LIneA - 2024 - All rights reserved |{' '}
+        LIneA - {currentYear} - All rights reserved |{' '}
         <Link
           href="https://www.linea.org.br/politica-de-privacidade"
           target="_blank"
