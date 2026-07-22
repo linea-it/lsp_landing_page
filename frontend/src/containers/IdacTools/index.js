@@ -17,16 +17,16 @@ export default function IdacTools() {
       registrationRequired: true,
       newRelease: false
     },
-    {
-      title: 'Open OnDemand',
-      description: 'Access interface to the HPC environment via Linux Terminal or Jupyter Notebooks with monitoring tools.',
-      imageSrc: 'idac_tools_logos/open_ondemand_logo_200x200.png',
-      imageAlt: 'Open OnDemand logo',
-      href: 'https://ondemand.linea.org.br/',
-      membersOnly: true,
-      registrationRequired: false,
-      newRelease: false
-    },
+    // {
+    //   title: 'Open OnDemand',
+    //   description: 'Access interface to the HPC environment via Linux Terminal or Jupyter Notebooks with monitoring tools.',
+    //   imageSrc: 'idac_tools_logos/open_ondemand_logo_200x200.png',
+    //   imageAlt: 'Open OnDemand logo',
+    //   href: 'https://ondemand.linea.org.br/',
+    //   membersOnly: true,
+    //   registrationRequired: false,
+    //   newRelease: false
+    // },
     {
       title: 'User Query',
       description: 'A user-friendly interface for Postgres database access based on daiquiri that allows the creation of temporary tables in MyDB users\' space, which is integrated with Jupyter and visualization tools.',
