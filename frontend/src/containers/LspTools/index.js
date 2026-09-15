@@ -59,6 +59,26 @@ export default function LspTools() {
       newRelease: true
     },
     {
+      title: 'CAnVAS',
+      description: '<DESCRIPTION>',
+      imageSrc: 'lsp_tools_logos/canvas_logo_200x200.png',
+      imageAlt: 'canvas logo',
+      href: settings?.is_dev ? 'https://canvas-dev.linea.org.br/' : 'https://canvas.linea.org.br/',
+      membersOnly: false,
+      registrationRequired: true,
+      newRelease: false,
+    },
+    {
+      title: 'Cutout',
+      description: '<DESCRIPTION>',
+      imageSrc: 'lsp_tools_logos/cutout_logo_200x200.png',
+      imageAlt: 'cutout logo',
+      href: settings?.is_dev ? 'https://cutout-dev.linea.org.br/' : 'https://cutout.linea.org.br/',
+      membersOnly: false,
+      registrationRequired: true,
+      newRelease: false,
+    },
+    {
       title: 'PZ Server',
       description: 'Ancillary service available to Rubin Science Platform users to host lightweight data products related to photo-zs.',
       imageSrc: 'lsp_tools_logos/pzserver_logo_200x200.png',
@@ -141,7 +161,7 @@ export default function LspTools() {
       alignItems="stretch"
     >
       {tools.map((tool, idx) => (
-        <Grid size={{ xs: 12, md: 6, lg: 4 }} key={`lsp-tool-${idx}`}>
+        < Grid size={{ xs: 12, md: 6, lg: 4 }} key={`lsp-tool-${idx}`}>
           <ToolsCard
             title={tool.title}
             description={tool.description}
@@ -153,7 +173,8 @@ export default function LspTools() {
             newRelease={tool.newRelease}
           />
         </Grid>
-      ))}
-    </Grid>
+      ))
+      }
+    </Grid >
   );
 }
