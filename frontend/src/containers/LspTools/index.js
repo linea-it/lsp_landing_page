@@ -50,7 +50,7 @@ export default function LspTools() {
     },
     {
       title: 'Sky Viewer',
-      description: 'Visualization tool based on Aladin that displays HIPS images and catalog overlays. (UNDER DEVELOPMENT)',
+      description: 'Interactive sky visualization tool based on Aladin Lite that displays HiPS survey images and catalog overlays.',
       imageSrc: 'lsp_tools_logos/skyviewer_logo_200x200.png',
       imageAlt: 'aladin logo',
       href: settings?.is_dev ? 'https://skyviewer-dev.linea.org.br/' : 'https://skyviewer.linea.org.br/',
@@ -60,7 +60,7 @@ export default function LspTools() {
     },
     {
       title: 'CAnVAS',
-      description: '<DESCRIPTION>',
+      description: 'Scientific platform to analyze galaxy cluster catalogs from optical surveys detected with the WaZP cluster finder. (UNDER DEVELOPMENT)',
       imageSrc: 'lsp_tools_logos/canvas_logo_200x200.png',
       imageAlt: 'canvas logo',
       href: settings?.is_dev ? 'https://canvas-dev.linea.org.br/' : 'https://canvas.linea.org.br/',
@@ -70,7 +70,7 @@ export default function LspTools() {
     },
     {
       title: 'Cutout',
-      description: '<DESCRIPTION>',
+      description: 'Service for extracting FITS image cutouts from survey data using spatial queries such as circle, range, and polygon. (UNDER DEVELOPMENT)',
       imageSrc: 'lsp_tools_logos/cutout_logo_200x200.png',
       imageAlt: 'cutout logo',
       href: settings?.is_dev ? 'https://cutout-dev.linea.org.br/' : 'https://cutout.linea.org.br/',
